@@ -19,4 +19,9 @@ public class Obstacle : PoolObject
             wasVisible = false; // 다음 활성화를 위해 리셋
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Time.timeScale = 0;
+    }
 }
