@@ -475,6 +475,8 @@ GameObject:
   - component: {fileID: 1721015877}
   - component: {fileID: 1721015878}
   - component: {fileID: 1721015879}
+  - component: {fileID: 1721015881}
+  - component: {fileID: 1721015880}
   m_Layer: 0
   m_Name: Hexagon Flat-Top
   m_TagString: Untagged
@@ -754,6 +756,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 3
   maxPower: 5
+--- !u!114 &1721015880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721015872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4fd9ad06a04fd46b2df8a8c92e52ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLength: 5
+--- !u!114 &1721015881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721015872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 124ace0ec3cd51349bcf45b0b847ef2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1791352160 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7161916149942265172, guid: 9e1db6b5e5ca2d44eb757e48259544db, type: 3}
@@ -858,7 +885,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2043999768}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 298f126b30b7e3f42a07bf6479f848ae, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
