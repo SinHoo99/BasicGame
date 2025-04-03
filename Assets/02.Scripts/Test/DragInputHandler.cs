@@ -1,17 +1,14 @@
-using UnityEngine;
 using System;
+using UnityEngine;
 
 public class DragInputHandler : MonoBehaviour
 {
-    public event Action<Vector2, Vector2> OnDragUpdate;
+    public event Action<Vector2, Vector2> OnDragStart;
+    public event Action<Vector2, Vector2> OnDragMove;
     public event Action<Vector2, Vector2> OnDragEnd;
 
-    private Vector2 dragStart;
-    private Vector2 dragCurrent;
     private bool isDragging = false;
-
-    public bool IsDragging => isDragging;
-    public Vector2 DragVector => dragStart - dragCurrent;
+    private Vector2 dragStart;
 
     void Update()
     {
@@ -19,19 +16,20 @@ public class DragInputHandler : MonoBehaviour
         {
             dragStart = GetInputPosition();
             isDragging = true;
+            OnDragStart?.Invoke(dragStart, dragStart);
         }
 
         if (Input.GetMouseButton(0) && isDragging)
         {
-            dragCurrent = GetInputPosition();
-            OnDragUpdate?.Invoke(dragStart, dragCurrent);
+            var dragCurrent = GetInputPosition();
+            OnDragMove?.Invoke(dragStart, dragCurrent);
         }
 
         if (Input.GetMouseButtonUp(0) && isDragging)
         {
-            dragCurrent = GetInputPosition();
+            var dragEnd = GetInputPosition();
             isDragging = false;
-            OnDragEnd?.Invoke(dragStart, dragCurrent);
+            OnDragEnd?.Invoke(dragStart, dragEnd);
         }
     }
 
