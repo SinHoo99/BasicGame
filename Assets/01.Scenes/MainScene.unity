@@ -1621,7 +1621,7 @@ PrefabInstance:
     - target: {fileID: 8564491359605352093, guid: f1d0508fb6b44234ea9f31bc5576b4e5, type: 3}
       propertyPath: Obstacle
       value: 
-      objectReference: {fileID: 1571057092688711992, guid: 77d850f0df26e6141998677f934d0648, type: 3}
+      objectReference: {fileID: 4226318855032691685, guid: 77d850f0df26e6141998677f934d0648, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
