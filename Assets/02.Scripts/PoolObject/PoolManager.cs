@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PoolManager : MonoBehaviour
 {
-    [Header("Bullet")]
-    [SerializeField] private PoolObject Bullet;
-    private int _maxBulletAmount = 20;
+    [Header("Obstacle")]
+    [SerializeField] private PoolObject Obstacle;
+    private int _maxObstacleAmount = 20;
 
     private void Start()
     {
@@ -15,6 +15,6 @@ public class PoolManager : MonoBehaviour
 
     public void AddPoolObject()
     {
-        ObjectPool.Instance.AddObjectPool(Tag.Bullet, Bullet, _maxBulletAmount);
+        ObjectPool.Instance.AddObjectPool(Tag.Obstacle, Obstacle, _maxObstacleAmount);
     }
 }
