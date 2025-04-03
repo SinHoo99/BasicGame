@@ -1,6 +1,7 @@
 public struct Tag
 {
-    public const string Bullet = "Bullet"; 
+    public const string Bullet = "Bullet";
+    public const string Obstacle = "Obstacle";
 }
 
 public struct Layer

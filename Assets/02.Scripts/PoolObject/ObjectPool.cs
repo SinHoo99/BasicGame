@@ -40,4 +40,9 @@ public class ObjectPool : Singleton<ObjectPool>
 
         PoolDictionary.Add(tag, objectPool);
     }
+
+    public void Push(PoolObject obj)
+    {
+        obj.gameObject.SetActive(false);
+    }
 }
