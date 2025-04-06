@@ -814,7 +814,7 @@ GameObject:
   - component: {fileID: 1721015878}
   m_Layer: 0
   m_Name: PlayerSprite
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1091,10 +1091,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1857062499}
+  - component: {fileID: 1857062503}
   - component: {fileID: 1857062502}
   - component: {fileID: 1857062501}
   - component: {fileID: 1857062500}
-  - component: {fileID: 1857062503}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
