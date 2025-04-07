@@ -7,7 +7,7 @@ using System.IO;
 public class PlayerData
 {
     [Header("변하는 데이터")]
-    public int LV;
+    public int HighScore;
 }
 
 [System.Serializable]

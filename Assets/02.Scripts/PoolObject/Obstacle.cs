@@ -22,6 +22,7 @@ public class Obstacle : PoolObject
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Time.timeScale = 0;
+        GameManager.Instance.SavePlayerData();
+        EventBus.Publish(new GameOverEvent());
     }
 }

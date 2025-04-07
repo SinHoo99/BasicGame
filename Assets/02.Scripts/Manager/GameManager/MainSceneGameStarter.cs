@@ -1,9 +1,6 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class MainSceneGameStarter : MonoBehaviour
 {
@@ -16,6 +13,8 @@ public class MainSceneGameStarter : MonoBehaviour
     }
     public void HidePannel()
     {
+        GameManager.Instance.ResetGameState();
+        GameManager.Instance.SetGameState(GameState.Playing);
         gameObject.SetActive(false);
         Time.timeScale = 1;
     }
