@@ -24,13 +24,4 @@ public class ScoreUI : MonoBehaviour
     {
         CurrentScoreText.text = $"Score : {e.CurrentScore}";
     }
-    public class PlayerScoreUpEvent
-    {
-        public int CurrentScore;
-        public PlayerScoreUpEvent(int score)
-        {
-            CurrentScore = score;
-        }
-    }
-
 }
