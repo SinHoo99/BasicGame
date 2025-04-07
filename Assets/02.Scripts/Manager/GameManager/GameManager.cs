@@ -1,12 +1,7 @@
-using System;
-using System.Collections;
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using static ScoreUI;
+
 
 public class GameManager : Singleton<GameManager>
 {
@@ -31,6 +26,14 @@ public class GameManager : Singleton<GameManager>
         LoadAllData();
         ResetGameState();
     }
+    #region 생성 관련 로직
+    private int ObstacleSpawnIndex;
+
+    public int GetNextObstacleIndex()
+    {
+        return ObstacleSpawnIndex++;
+    }
+    #endregion
     #region 상태 관련 로직
     public void SetGameState(GameState state)
     {
@@ -46,6 +49,8 @@ public class GameManager : Singleton<GameManager>
     public void ResetGameState()
     {
         playerCurrentScore = 0;
+        CurrentState = GameState.Playing;
+        ObstacleSpawnIndex = 0;
     }
     #endregion
 

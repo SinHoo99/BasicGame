@@ -33,5 +33,6 @@ public class ObstacleSpawner : MonoBehaviour
 
         float x = Random.Range(-xRange, xRange);
         obstacle.transform.position = new Vector3(x, y, 0);
+        GameManager.Instance.GetNextObstacleIndex();
     }
 }
