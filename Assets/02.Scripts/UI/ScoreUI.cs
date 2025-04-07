@@ -8,13 +8,11 @@ public class ScoreUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI CurrentScoreText;
     private void OnEnable()
     {
-        if (GameManager.Instance != null)
-            GM.OnScoreChanged += UpdateScoreUI;
+        EventBus.Subscribe<PlayerScoreUpEvent>(UpdateScoreUI);
     }
     private void OnDisable()
     {
-        if (GameManager.Instance != null)
-            GM.OnScoreChanged -= UpdateScoreUI;
+        EventBus.Unsubscribe<PlayerScoreUpEvent>(UpdateScoreUI);
     }
     private void Start()
     {
@@ -22,8 +20,17 @@ public class ScoreUI : MonoBehaviour
         CurrentScoreText.text = "Score : 0";
     }
 
-    private void UpdateScoreUI(int newScore)
+    private void UpdateScoreUI(PlayerScoreUpEvent e)
     {
-        CurrentScoreText.text = $"Score : {newScore.ToString()}";
+        CurrentScoreText.text = $"Score : {e.CurrentScore}";
     }
+    public class PlayerScoreUpEvent
+    {
+        public int CurrentScore;
+        public PlayerScoreUpEvent(int score)
+        {
+            CurrentScore = score;
+        }
+    }
+
 }

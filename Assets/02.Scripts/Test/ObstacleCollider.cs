@@ -1,4 +1,5 @@
 using UnityEngine;
+using static ScoreUI;
 
 public class ObstacleCollider : MonoBehaviour
 {
@@ -16,7 +17,6 @@ public class ObstacleCollider : MonoBehaviour
         {
             GM.AddScore(1);
             hasScored = true;
-            Debug.Log(GM.playerCurrentScore);
         }
     }
 }

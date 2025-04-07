@@ -6,11 +6,11 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static ScoreUI;
 
 public class GameManager : Singleton<GameManager>
 {
     public int playerCurrentScore;
-    public event Action<int> OnScoreChanged;
     private bool isQuitting;
     protected override void Awake()
     {
@@ -34,7 +34,7 @@ public class GameManager : Singleton<GameManager>
     public void AddScore(int amount)
     {
         playerCurrentScore += amount;
-        OnScoreChanged.Invoke(playerCurrentScore);
+        EventBus.Publish(new PlayerScoreUpEvent(playerCurrentScore));
     }
 
     #endregion
