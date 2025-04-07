@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameOverPopUp : MonoBehaviour
@@ -8,6 +6,5 @@ public class GameOverPopUp : MonoBehaviour
     void Start()
     {
         this.gameObject.SetActive(false);
-    }
-   
+    } 
 }

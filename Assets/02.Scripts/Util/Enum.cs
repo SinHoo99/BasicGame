@@ -21,5 +21,11 @@ public enum DummyDataEnum
     Dummy4
 }
 
+public enum GameState 
+{
+    Playing,
+    GameOver
+}
+
 
 

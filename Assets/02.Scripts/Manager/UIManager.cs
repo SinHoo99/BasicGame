@@ -22,6 +22,7 @@ public class UIManager : Singleton<UIManager>
     }
     private void OnGameOver(GameOverEvent e)
     {
+        GameManager.Instance.SetGameState(GameState.GameOver);
         Show(gameOverPanel);
     }
     public void Show(GameObject panel)

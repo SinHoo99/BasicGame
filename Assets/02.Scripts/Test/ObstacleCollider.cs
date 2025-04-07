@@ -1,5 +1,4 @@
 using UnityEngine;
-using static ScoreUI;
 
 public class ObstacleCollider : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class ObstacleCollider : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag(Tag.Player) && !hasScored)
+        if (collision.CompareTag(Tag.Player) && !hasScored && GM.CurrentState != GameState.GameOver)
         {
             GM.AddScore(1);
             hasScored = true;

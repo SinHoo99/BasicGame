@@ -10,6 +10,7 @@ using static ScoreUI;
 
 public class GameManager : Singleton<GameManager>
 {
+    public GameState CurrentState { get; private set; }
     public int playerCurrentScore;
     private bool isQuitting;
     protected override void Awake()
@@ -28,17 +29,26 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         LoadAllData();
+        ResetGameState();
     }
-
+    #region 상태 관련 로직
+    public void SetGameState(GameState state)
+    {
+        CurrentState = state;
+    }
+    #endregion
     #region 점수 관련 로직
     public void AddScore(int amount)
     {
         playerCurrentScore += amount;
         EventBus.Publish(new PlayerScoreUpEvent(playerCurrentScore));
     }
-
+    public void ResetGameState()
+    {
+        playerCurrentScore = 0;
+    }
     #endregion
-    
+
 
     #region 데이터 (정적데이터 (EX.CSV데이터) )
     [SerializeField] private DataManager DataManager;
