@@ -1,11 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Obstacle : PoolObject
 {
+    private Dictionary<int, Color> scoreColorMap = new Dictionary<int, Color>()
+    {
+        {10, Color.cyan },
+        {20, Color.red },
+        {30, Color.blue },
+        {40, Color.magenta }
+    };
+
     private bool wasVisible = false;
 
+    private SpriteRenderer spriteRenderer;
+
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+    private void OnEnable()
+    {
+        UpdateColorByScore(GameManager.Instance.playerCurrentScore);
+    }
     void OnBecameVisible()
     {
         wasVisible = true;
@@ -24,5 +43,26 @@ public class Obstacle : PoolObject
     {
         GameManager.Instance.SavePlayerData();
         EventBus.Publish(new GameOverEvent());
+    }
+
+    private void UpdateColorByScore(int score)
+    {
+        Color resultColor = Color.white;
+
+        foreach (var kvp in scoreColorMap)
+        {
+            if(score < kvp.Key)
+            {
+                resultColor = kvp.Value;
+                break;
+            }
+        }
+
+        if(score >= scoreColorMap.Keys.Max())
+        {
+            resultColor = scoreColorMap[scoreColorMap.Keys.Max()];
+        }
+
+        spriteRenderer.color = resultColor; 
     }
 }
