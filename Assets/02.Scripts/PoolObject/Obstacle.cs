@@ -23,7 +23,7 @@ public class Obstacle : PoolObject
     }
     private void OnEnable()
     {
-        UpdateColorByScore(GameManager.Instance.playerCurrentScore);
+        UpdateColorByScore(GameManager.Instance.GetNextObstacleIndex());
     }
     void OnBecameVisible()
     {

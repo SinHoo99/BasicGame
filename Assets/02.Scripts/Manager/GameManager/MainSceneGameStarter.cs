@@ -14,7 +14,6 @@ public class MainSceneGameStarter : MonoBehaviour
     public void HidePannel()
     {
         GameManager.Instance.ResetGameState();
-        GameManager.Instance.SetGameState(GameState.Playing);
         gameObject.SetActive(false);
         Time.timeScale = 1;
     }
