@@ -13,4 +13,9 @@ public class Test : MonoBehaviour
     {
         SceneLoadManager.LoadScene(0);
     }
+
+    public void GoStoreScene()
+    {
+        SceneLoadManager.LoadScene(3);
+    }
 }

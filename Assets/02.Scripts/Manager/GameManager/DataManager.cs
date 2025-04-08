@@ -1,28 +1,25 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.U2D;
-using static UnityEditor.Progress;
 
-#region DataClass
+#region ColorData
+public class ColorData
+{
+    public ColorID ID;
+    public string Name;
+    public int R;
+    public int G;
+    public int B;
 
+    public Color GetUnityColor()
+    {
+        return new Color(R / 255f, G / 255f, B / 255f);
+    }
+}
 #endregion
+
 public class DataManager : MonoBehaviour
 {    
     public PlayerSO PlayerSO;
-
-    #region ColorData
-
-    public class ColorData
-    {
-        public ColorID ID;
-        public string Name;
-        public int R;
-        public int G;
-        public int B;
-    }
-
-    #endregion
-
     public void Initializer()
     {
         ContainColorData();
@@ -45,4 +42,5 @@ public class DataManager : MonoBehaviour
             ColorDatas.Add(resourceColorData.ID, resourceColorData);
         }
     }
+
 }

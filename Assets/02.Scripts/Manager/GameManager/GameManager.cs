@@ -18,7 +18,7 @@ public class GameManager : Singleton<GameManager>
         // 실제 모바일 테스트 시 30, 60 비교해보기
         Application.targetFrameRate = 60;
 
-        DataManager.Initializer();
+        _dataManager.Initializer();
         SoundManager.Initializer();
 
     }
@@ -59,13 +59,14 @@ public class GameManager : Singleton<GameManager>
     }
     #endregion
     #region 데이터 (정적데이터 (EX.CSV데이터, SO) )
-    [SerializeField] private DataManager DataManager;
+    [SerializeField] private DataManager _dataManager;
+    public DataManager DataManager => _dataManager;
 
-    public PlayerSO GetPlayerSOData() => DataManager?.PlayerSO;
+    public PlayerSO GetPlayerSOData() => _dataManager?.PlayerSO;
 
     public ColorData GetColorData(ColorID id)
     {
-        return DataManager.ColorDatas[id];
+        return _dataManager.ColorDatas[id];
     }
 
     #endregion
