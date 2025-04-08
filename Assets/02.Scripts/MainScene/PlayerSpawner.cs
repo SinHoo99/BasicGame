@@ -14,5 +14,4 @@ public class PlayerSpawner : MonoBehaviour
            Instantiate(playerPrefab, spawnPos, Quaternion.identity);
         }
     }
-
 }

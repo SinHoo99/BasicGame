@@ -55,8 +55,10 @@ public class GameManager : Singleton<GameManager>
     #endregion
 
 
-    #region 데이터 (정적데이터 (EX.CSV데이터) )
+    #region 데이터 (정적데이터 (EX.CSV데이터, SO) )
     [SerializeField] private DataManager DataManager;
+
+    public PlayerSO GetPlayerSOData() => DataManager?.PlayerSO;
 
     #endregion
 

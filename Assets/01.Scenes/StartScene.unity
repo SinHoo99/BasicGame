@@ -1048,6 +1048,10 @@ PrefabInstance:
       value: DataManager
       objectReference: {fileID: 0}
     - target: {fileID: 8154834005945730681, guid: 9c9029a178db81e49be36160b2002f45, type: 3}
+      propertyPath: PlayerSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 2101710ad3c8bc748961be03636d3e48, type: 2}
+    - target: {fileID: 8154834005945730681, guid: 9c9029a178db81e49be36160b2002f45, type: 3}
       propertyPath: isDontDestroy
       value: 1
       objectReference: {fileID: 0}

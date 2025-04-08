@@ -14,6 +14,8 @@ public class DummyData
 #endregion
 public class DataManager : MonoBehaviour
 {    
+    public PlayerSO PlayerSO;
+
     public void Initialize()
     {
         InitialDummyData();
