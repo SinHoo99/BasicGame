@@ -26,6 +26,7 @@ public class GameManager : Singleton<GameManager>
         LoadAllData();
         ResetGameState();
     }
+
     #region 생성 관련 로직
     private int ObstacleSpawnIndex;
 
@@ -53,15 +54,12 @@ public class GameManager : Singleton<GameManager>
         ObstacleSpawnIndex = 0;
     }
     #endregion
-
-
     #region 데이터 (정적데이터 (EX.CSV데이터, SO) )
     [SerializeField] private DataManager DataManager;
 
     public PlayerSO GetPlayerSOData() => DataManager?.PlayerSO;
 
     #endregion
-
     #region 세이브
 
     [SerializeField] private SaveManager SaveManager;
@@ -87,8 +85,6 @@ public class GameManager : Singleton<GameManager>
             return false;
         }
     }
-
-
     public OptionData NowOptionData;
     public void SaveOptionData()
     {
@@ -113,7 +109,7 @@ public class GameManager : Singleton<GameManager>
     {
         SavePlayerData();
     }
-    public bool LoadAllData() // todo: 수정 필요
+    public bool LoadAllData()
     {
         if (LoadPlayerData())
         {
@@ -124,9 +120,7 @@ public class GameManager : Singleton<GameManager>
             return false;
         }
     }
-
     #endregion
-
     #region 사운드
 
     [SerializeField] private SoundManager SoundManager;
@@ -147,7 +141,6 @@ public class GameManager : Singleton<GameManager>
     }
 
     #endregion
-
     #region 경고 알림
 
     public GameObject AlertObject;
@@ -166,7 +159,6 @@ public class GameManager : Singleton<GameManager>
     }
 
     #endregion
-
     #region  애플리케이션 이벤트
     private void OnApplicationQuit()
     {

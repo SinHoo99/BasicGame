@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
     [SerializeField] private DragIndicator indicator;
     [SerializeField] private PlayerMovement movement;
 
-    private GameObject PlayerSO => GameManager.Instance.GetPlayerSOData().PlayerPrefab;
     private SpriteRenderer spriteRenderer;
     private ParticleSystem playerParticleSystem;
 
@@ -24,6 +23,14 @@ public class Player : MonoBehaviour
         playerParticleSystem = GetComponentInChildren<ParticleSystem>();
     }
 
+    private void Start()
+    {
+        //  저장된 색 불러오기
+        var savedColor = GameManager.Instance.NowPlayerData.SavedColor.ToUnityColor();
+
+        ApplyColor(savedColor);
+    }
+
     private void Update()
     {
         timer += Time.deltaTime;
@@ -32,19 +39,26 @@ public class Player : MonoBehaviour
         {
             timer = 0f;
 
-            // 랜덤 색상 생성
+            //  랜덤 색상 생성
             Color randomColor = new Color(Random.value, Random.value, Random.value);
 
-            // SpriteRenderer에 적용
-            if (spriteRenderer != null)
-                spriteRenderer.color = randomColor;
+            // 적용
+            ApplyColor(randomColor);
 
-            // ParticleSystem에 적용
-            if (playerParticleSystem != null)
-            {
-                var main = playerParticleSystem.main;
-                main.startColor = randomColor;
-            }
+            //  저장
+            GameManager.Instance.NowPlayerData.SavedColor = new SerializableColor(randomColor);
+        }
+    }
+
+    private void ApplyColor(Color color)
+    {
+        if (spriteRenderer != null)
+            spriteRenderer.color = color;
+
+        if (playerParticleSystem != null)
+        {
+            var main = playerParticleSystem.main;
+            main.startColor = color;
         }
     }
 }
