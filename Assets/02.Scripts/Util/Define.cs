@@ -22,13 +22,17 @@ public struct ParameterHash
 
 public struct ResourcesPath
 {
-    public const string DummyDataCSV = "DummyDataCSV";
+    public const string ColorCSV = "CSV/ColorCSV";
 }
 
 public struct Data
 {
-    public const string DummyDataID = "DummyDataID";
+    public const string ID = "ID";
     public const string Name = "Name";
+    public const string R = "R";
+    public const string G = "G";
+    public const string B = "B";
+
 }
 
 public struct Mixer

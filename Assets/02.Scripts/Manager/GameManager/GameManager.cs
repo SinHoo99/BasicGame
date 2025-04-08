@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using static DataManager;
 
 
 public class GameManager : Singleton<GameManager>
@@ -17,8 +18,9 @@ public class GameManager : Singleton<GameManager>
         // 실제 모바일 테스트 시 30, 60 비교해보기
         Application.targetFrameRate = 60;
 
-        //DataManager.Initialize();
+        DataManager.Initializer();
         SoundManager.Initializer();
+
     }
 
     private void Start()
@@ -26,6 +28,8 @@ public class GameManager : Singleton<GameManager>
         LoadAllData();
         ResetGameState();
     }
+
+
 
     #region 생성 관련 로직
     private int ObstacleSpawnIndex;
@@ -58,6 +62,11 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private DataManager DataManager;
 
     public PlayerSO GetPlayerSOData() => DataManager?.PlayerSO;
+
+    public ColorData GetColorData(ColorID id)
+    {
+        return DataManager.ColorDatas[id];
+    }
 
     #endregion
     #region 세이브
