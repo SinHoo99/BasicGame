@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,9 @@ public class ColorBtn : MonoBehaviour
     public TextMeshProUGUI nameText;
 
     private ColorData currentData;
+
+    public Action<Color> OnColorSelected;
+
     public void Setup(ColorData data)
     {
         currentData = data;
@@ -26,5 +30,7 @@ public class ColorBtn : MonoBehaviour
 
         GameManager.Instance.NowPlayerData.NowColorID = currentData.ID;
         GameManager.Instance.SaveAllData();
+
+        OnColorSelected?.Invoke(currentData.GetUnityColor());
     }
 }

@@ -1,16 +1,38 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+
 
 public class PickColorUI : MonoBehaviour
 {
     [SerializeField] private GameObject ColorPickPrefab;
     [SerializeField] private Transform Content;
+    [SerializeField] private Image nowColorImg;
+
+    public event Action<Color> OnColorPick;
+    private void OnEnable()
+    {
+        OnColorPick += ShowNowColor;
+    }
+
+    private void OnDisable()
+    {
+        OnColorPick -= ShowNowColor;
+    }
 
     private void Start()
     {
         CreateColorDatas();
     }
+
+    private void ShowNowColor(Color color)
+    {
+        if (nowColorImg != null)
+        {
+            nowColorImg.color = color;
+        }
+    }
+
 
     public void CreateColorDatas()
     {
@@ -19,14 +41,22 @@ public class PickColorUI : MonoBehaviour
             ColorData data = pair.Value;
 
             GameObject go = Instantiate(ColorPickPrefab, Content);
+            var item = go.GetComponentInChildren<ColorBtn>();
 
-            var item = go.GetComponent<ColorBtn>();
             if (item != null)
+            {
                 item.Setup(data);
-            else
-                Debug.LogWarning("ColorPickItem이 프리팹에 없습니다!");
-        }
 
-        Debug.Log($"생성 완료: {GameManager.Instance.DataManager.ColorDatas.Count}개 색상");
+                // 버튼이 눌렸을 때 실행될 이벤트 등록
+                item.OnColorSelected += (pickedColor) =>
+                {
+                    OnColorPick?.Invoke(pickedColor);
+                };
+            }
+            else
+            {
+                Debug.LogWarning("ColorPickItem이 프리팹에 없습니다!");
+            }
+        }
     }
 }
