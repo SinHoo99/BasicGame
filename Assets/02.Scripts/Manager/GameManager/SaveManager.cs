@@ -8,22 +8,7 @@ public class PlayerData
 {
     [Header("변하는 데이터")]
     public int HighScore;
-    public SerializableColor SavedColor;
-}
-
-[System.Serializable]
-public class SerializableColor
-{
-    public float r, g, b, a;
-
-    public SerializableColor(Color color)
-    {
-        r = color.r;
-        g = color.g;
-        b = color.b;
-        a = color.a;
-    }
-    public Color ToUnityColor() => new Color(r, g, b, a);
+    public ColorID NowColorID;
 }
 
 [System.Serializable]

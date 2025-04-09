@@ -66,7 +66,9 @@ public class GameManager : Singleton<GameManager>
 
     public ColorData GetColorData(ColorID id)
     {
-        return _dataManager.ColorDatas[id];
+        return _dataManager.ColorDatas.TryGetValue(id, out var data)
+       ? data
+       : new ColorData { ID = ColorID.Black, Name = "Default", R = 0, G = 0, B = 0 };
     }
 
     #endregion

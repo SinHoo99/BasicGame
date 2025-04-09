@@ -24,6 +24,7 @@ public class ColorBtn : MonoBehaviour
             return;
         }
 
-        Debug.Log($"버튼 클릭됨: ID: {(int)currentData.ID}, 이름: {currentData.Name}, RGB: ({currentData.R}, {currentData.G}, {currentData.B})");
+        GameManager.Instance.NowPlayerData.NowColorID = currentData.ID;
+        GameManager.Instance.SaveAllData();
     }
 }
