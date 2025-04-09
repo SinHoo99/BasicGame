@@ -1025,7 +1025,7 @@ PrefabInstance:
       objectReference: {fileID: 1570435065}
     - target: {fileID: 5704615706523936193, guid: 16acec44fbdb87340a06fafe5da3f17a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Testing
+      value: GoMainScene
       objectReference: {fileID: 0}
     - target: {fileID: 5908932964372215202, guid: 16acec44fbdb87340a06fafe5da3f17a, type: 3}
       propertyPath: m_Name
@@ -2106,11 +2106,7 @@ MonoBehaviour:
   SaveManager: {fileID: 1509659495}
   NowPlayerData:
     HighScore: 0
-    SavedColor:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
+    NowColorID: 0
   NowOptionData:
     BGMVolume: 0
     SFXVolume: 0

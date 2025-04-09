@@ -281,7 +281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6fe32a1940f174dbcf6c7c479cee72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 135753305686051088, guid: 210941a6ffaf6e6418856dc310229fd8, type: 3}
   spawnCheckRoot: {fileID: 305044775}
 --- !u!1 &433787055
 GameObject:
@@ -1005,8 +1004,24 @@ PrefabInstance:
       value: LoadSceneBtn
       objectReference: {fileID: 0}
     - target: {fileID: 3700942824089809686, guid: ad140f139a4779a4eb66c1238db1a72b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3700942824089809686, guid: ad140f139a4779a4eb66c1238db1a72b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3700942824089809686, guid: ad140f139a4779a4eb66c1238db1a72b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3700942824089809686, guid: ad140f139a4779a4eb66c1238db1a72b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Testing
+      value: GoMainScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3700942824089809686, guid: ad140f139a4779a4eb66c1238db1a72b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Test, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5832659813869073674, guid: ad140f139a4779a4eb66c1238db1a72b, type: 3}
       propertyPath: m_SizeDelta.x
