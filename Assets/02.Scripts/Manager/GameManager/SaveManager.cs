@@ -8,6 +8,7 @@ public class PlayerData
 {
     [Header("변하는 데이터")]
     public int HighScore;
+    public ColorID NowColorID;
 }
 
 [System.Serializable]

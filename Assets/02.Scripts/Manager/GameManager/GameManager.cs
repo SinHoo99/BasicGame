@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using static DataManager;
 
 
 public class GameManager : Singleton<GameManager>
@@ -17,8 +18,9 @@ public class GameManager : Singleton<GameManager>
         // 실제 모바일 테스트 시 30, 60 비교해보기
         Application.targetFrameRate = 60;
 
-        //DataManager.Initialize();
+        _dataManager.Initializer();
         SoundManager.Initializer();
+
     }
 
     private void Start()
@@ -26,6 +28,9 @@ public class GameManager : Singleton<GameManager>
         LoadAllData();
         ResetGameState();
     }
+
+
+
     #region 생성 관련 로직
     private int ObstacleSpawnIndex;
 
@@ -53,13 +58,26 @@ public class GameManager : Singleton<GameManager>
         ObstacleSpawnIndex = 0;
     }
     #endregion
+    #region 데이터 (정적데이터 (EX.CSV데이터, SO) )
+    [SerializeField] private DataManager _dataManager;
+    public DataManager DataManager => _dataManager;
 
+    public PlayerSO GetPlayerSOData() => _dataManager?.PlayerSO;
 
-    #region 데이터 (정적데이터 (EX.CSV데이터) )
-    [SerializeField] private DataManager DataManager;
-
+    public ColorData GetColorData(ColorID id)
+    {
+        return _dataManager.ColorDatas.TryGetValue(id, out var data)
+       ? data
+       : new ColorData
+       {
+           ID = ColorID.Black,
+           Name = "Default",
+           R = 0,
+           G = 0,
+           B = 0
+       };
+    }
     #endregion
-
     #region 세이브
 
     [SerializeField] private SaveManager SaveManager;
@@ -85,8 +103,6 @@ public class GameManager : Singleton<GameManager>
             return false;
         }
     }
-
-
     public OptionData NowOptionData;
     public void SaveOptionData()
     {
@@ -111,7 +127,7 @@ public class GameManager : Singleton<GameManager>
     {
         SavePlayerData();
     }
-    public bool LoadAllData() // todo: 수정 필요
+    public bool LoadAllData()
     {
         if (LoadPlayerData())
         {
@@ -122,9 +138,7 @@ public class GameManager : Singleton<GameManager>
             return false;
         }
     }
-
     #endregion
-
     #region 사운드
 
     [SerializeField] private SoundManager SoundManager;
@@ -145,7 +159,6 @@ public class GameManager : Singleton<GameManager>
     }
 
     #endregion
-
     #region 경고 알림
 
     public GameObject AlertObject;
@@ -164,7 +177,6 @@ public class GameManager : Singleton<GameManager>
     }
 
     #endregion
-
     #region  애플리케이션 이벤트
     private void OnApplicationQuit()
     {

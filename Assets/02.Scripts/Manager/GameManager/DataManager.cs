@@ -1,41 +1,46 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.U2D;
 
-#region DataClass
-
-public class DummyData
+#region ColorData
+public class ColorData
 {
-    public DummyDataEnum DummyDataID;
+    public ColorID ID;
     public string Name;
-}
+    public int R;
+    public int G;
+    public int B;
 
+    public Color GetUnityColor()
+    {
+        return new Color(R / 255f, G / 255f, B / 255f);
+    }
+}
 #endregion
+
 public class DataManager : MonoBehaviour
 {    
-    public void Initialize()
+    public PlayerSO PlayerSO;
+    public void Initializer()
     {
-        InitialDummyData();
+        ContainColorData();
     }
 
-    public Dictionary<DummyDataEnum, DummyData> DummyDatas = new Dictionary<DummyDataEnum, DummyData>();
+    public Dictionary<ColorID, ColorData> ColorDatas = new Dictionary<ColorID, ColorData>();
 
-    public void InitialDummyData()
+    public void ContainColorData()
     {
-        List<Dictionary<string, string>> dummyDataList = CSVReader.Read(ResourcesPath.DummyDataCSV);
+        List<Dictionary<string, string>> resourceColorDataList = CSVReader.Read(ResourcesPath.ColorCSV);
 
-        foreach (var datas in dummyDataList)
+        foreach (var datas in resourceColorDataList)
         {
-            DummyData dummyData = new DummyData();
-
-            dummyData.DummyDataID = (DummyDataEnum)int.Parse(datas[Data.DummyDataID]);
-            dummyData.Name = datas[Data.Name];
+            ColorData resourceColorData = new ColorData();
+            resourceColorData.ID = (ColorID)int.Parse(datas[Data.ID]);
+            resourceColorData.Name = datas[Data.Name];
+            resourceColorData.R = int.Parse(datas[Data.R]);
+            resourceColorData.G = int.Parse(datas[Data.G]);
+            resourceColorData.B = int.Parse(datas[Data.B]);
+            ColorDatas.Add(resourceColorData.ID, resourceColorData);
         }
     }
 
-    public DummyData GetDummyData(DummyDataEnum id)
-    {
-        return DummyDatas[id];
-    }
 }
