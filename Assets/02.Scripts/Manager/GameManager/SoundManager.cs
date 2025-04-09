@@ -52,5 +52,12 @@ public class SoundManager : MonoBehaviour
         SFXSource.pitch = 1f + Random.Range(-SoundEffectPitchVariance, SoundEffectPitchVariance);
         SFXSource.PlayOneShot(SFXDicts[target][index]);
     }
+
+    public void SetVolume()
+    {
+        AudioMixer.SetFloat(Mixer.BGM, GameManager.Instance.NowOptionData.BGMVolume);
+        AudioMixer.SetFloat(Mixer.SFX, GameManager.Instance.NowOptionData.SFXVolume);
+    }
+
 }
 

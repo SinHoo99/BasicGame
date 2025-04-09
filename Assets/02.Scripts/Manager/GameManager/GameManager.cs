@@ -114,6 +114,7 @@ public class GameManager : Singleton<GameManager>
         if (SaveManager.TryLoadData(out OptionData data))
         {
             NowOptionData = data;
+            SoundManager.SetVolume();
             return true;
         }
         else
