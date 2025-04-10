@@ -23,6 +23,9 @@ public class PickColorUI : MonoBehaviour
     private void Start()
     {
         CreateColorDatas();
+        nowColorImg.color = GameManager.Instance
+     .GetColorData(GameManager.Instance.NowPlayerData.NowColorID)
+     .GetUnityColor();
     }
 
     private void ShowNowColor(Color color)
