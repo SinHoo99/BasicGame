@@ -27,6 +27,7 @@ public class GameManager : Singleton<GameManager>
     {
         LoadAllData();
         ResetGameState();
+        PlayBGM(BGM.BGM);
     }
 
 
@@ -113,6 +114,7 @@ public class GameManager : Singleton<GameManager>
         if (SaveManager.TryLoadData(out OptionData data))
         {
             NowOptionData = data;
+            SoundManager.SetVolume();
             return true;
         }
         else
@@ -125,11 +127,12 @@ public class GameManager : Singleton<GameManager>
 
     public void SaveAllData()
     {
+        SaveOptionData();
         SavePlayerData();
     }
     public bool LoadAllData()
     {
-        if (LoadPlayerData())
+        if (LoadPlayerData() && LoadOptionData())
         {
             return true;
         }
@@ -150,33 +153,16 @@ public class GameManager : Singleton<GameManager>
 
     public void PlayBGM(BGM target)
     {
-        //SoundManager.PlayBGM(target);
+        SoundManager.PlayBGM(target);
     }
 
     public void PlaySFX(SFX target)
     {
-        //SoundManager.PlaySFX(target);
+        SoundManager.PlaySFX(target);
     }
 
     #endregion
-    #region 경고 알림
 
-    public GameObject AlertObject;
-    public TextMeshProUGUI AlertText;
-
-    public void ShowAlert(string msg)
-    {
-        AlertText.text = msg;
-        AlertObject.SetActive(true);
-        // PlaySFX(SFX.Alert);
-
-    }
-    public void HideAlert()
-    {
-        AlertObject.SetActive(false);
-    }
-
-    #endregion
     #region  애플리케이션 이벤트
     private void OnApplicationQuit()
     {

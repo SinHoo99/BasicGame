@@ -74,17 +74,11 @@ public class SettingPopup : MonoBehaviour
 
     public void OnClickSaveBtn()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 2)
-        {
-            /*  GM.SaveAllData(GM.Player.transform.position, GM.Player.transform.rotation);
-              GameManager.Instance.PlaySFX(SFX.Click);*/
 
-            SceneLoadManager.LoadScene(0);
-        }
-        else
-        {
-            GM.ShowAlert("던전 안에서는 저장할 수 없습니다.");
-        }
+        GM.SaveAllData();
+        GameManager.Instance.PlaySFX(SFX.Click);
+        this.gameObject.SetActive(false);
+
     }
 
     #region 설정 창 활성화 토글

@@ -6,7 +6,7 @@ public enum SoundType
 
 public enum BGM
 {
-    Start
+    BGM
 }
 public enum SFX
 {
