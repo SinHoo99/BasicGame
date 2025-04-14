@@ -18,7 +18,7 @@ public class ScoreUI : MonoBehaviour
     private void Start()
     {
         HighScoreText.text = $"HighScore : {GM.NowPlayerData.HighScore.ToString()}";
-        CurrentScoreText.text = "Score : 0";
+        CurrentScoreText.text = "0";
     }
 
     private void UpdateScoreUI(PlayerScoreUpEvent e)
