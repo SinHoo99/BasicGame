@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private ParticleSystem playerParticleSystem;
+    private BoxCollider2D boxCollider;
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
 
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         playerParticleSystem = GetComponentInChildren<ParticleSystem>();
+        boxCollider = GetComponentInChildren<BoxCollider2D>();
     }
 
     private void Start()
@@ -38,4 +40,5 @@ public class Player : MonoBehaviour
             main.startColor = color;
         }
     }
+
 }

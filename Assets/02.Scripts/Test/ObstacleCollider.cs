@@ -5,7 +5,6 @@ public class ObstacleCollider : MonoBehaviour
     private GameManager GM => GameManager.Instance;
     private bool hasScored = false;
 
-    
     private void OnEnable()
     {
         hasScored = false;

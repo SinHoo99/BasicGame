@@ -42,5 +42,4 @@ public class DataManager : MonoBehaviour
             ColorDatas.Add(resourceColorData.ID, resourceColorData);
         }
     }
-
 }

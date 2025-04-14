@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class Obstacle : PoolObject
 {
-    private Dictionary<int, Color> scoreColorMap = new Dictionary<int, Color>()
+   /* private Dictionary<int, Color> scoreColorMap = new Dictionary<int, Color>()
     {
         {10, Color.cyan },
         {20, Color.red },
         {30, Color.blue },
         {40, Color.magenta }
-    };
+    };*/
 
     private bool wasVisible = false;
 
@@ -23,7 +23,7 @@ public class Obstacle : PoolObject
     }
     private void OnEnable()
     {
-        UpdateColorByScore(GameManager.Instance.GetNextObstacleIndex());
+       /* UpdateColorByScore(GameManager.Instance.GetNextObstacleIndex());*/
     }
     void OnBecameVisible()
     {
@@ -39,13 +39,7 @@ public class Obstacle : PoolObject
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        GameManager.Instance.SavePlayerData();
-        EventBus.Publish(new GameOverEvent());
-    }
-
-    private void UpdateColorByScore(int score)
+ /*   private void UpdateColorByScore(int score)
     {
         Color resultColor = Color.white;
 
@@ -64,5 +58,5 @@ public class Obstacle : PoolObject
         }
 
         spriteRenderer.color = resultColor; 
-    }
+    }*/
 }

@@ -3,6 +3,7 @@ public struct Tag
     public const string Bullet = "Bullet";
     public const string Obstacle = "Obstacle";
     public const string Player = "Player";
+    public const string Wall = "Wall";
 }
 
 public struct Layer
@@ -40,3 +41,4 @@ public struct Mixer
     public const string BGM = "BGM";
     public const string SFX = "SFX";
 }
+

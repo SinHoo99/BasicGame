@@ -15,14 +15,14 @@ public enum SFX
 
 public enum ColorID
 {
-    Aliceblue = 1,
+    Black = 1,
     Antiquewhite = 2,
     Aqua = 3,
     Aquamarine = 4,
     Azure = 5,
     Beige = 6,
     Bisque = 7,
-    Black = 8,
+    Aliceblue = 8,
     Blanchedalmond = 9,
     Blue = 10,
     Blueviolet = 11,

@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 1126122297375516085}
   - component: {fileID: 615335473338460636}
   - component: {fileID: 2783887124783807970}
+  - component: {fileID: 6354316316226578012}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Player
@@ -5159,9 +5160,21 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!114 &6354316316226578012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5915664230199568680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a9f072832b3324b9b786279044eb44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
