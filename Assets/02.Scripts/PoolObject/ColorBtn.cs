@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class ColorBtn : MonoBehaviour
 {
     public Image colorImage;
-    public TextMeshProUGUI nameText;
     public Image lockIcon;
 
     private ColorData currentData;
@@ -25,10 +24,8 @@ public class ColorBtn : MonoBehaviour
         currentData = data;
 
         colorImage.color = data.GetUnityColor();
-        nameText.text = data.Name;
 
         bool isUnlocked = GameManager.Instance.NowPlayerData.HighScore >= (int)data.ID;
-        nameText.text = isUnlocked ? data.Name : "???";
 
 
         if (myButton != null)
