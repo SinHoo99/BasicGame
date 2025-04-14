@@ -6,6 +6,7 @@ public class ScoreUI : MonoBehaviour
     private GameManager GM => GameManager.Instance;
     [SerializeField] private TextMeshProUGUI HighScoreText;
     [SerializeField] private TextMeshProUGUI CurrentScoreText;
+    [SerializeField] private TextMeshProUGUI NowScoreText;
     private void OnEnable()
     {
         EventBus.Subscribe<PlayerScoreUpEvent>(UpdateScoreUI);
@@ -22,6 +23,7 @@ public class ScoreUI : MonoBehaviour
 
     private void UpdateScoreUI(PlayerScoreUpEvent e)
     {
-        CurrentScoreText.text = $"Score : {e.CurrentScore}";
+        CurrentScoreText.text = $"{e.CurrentScore}";
+        NowScoreText.text = $"Score : {e.CurrentScore}";
     }
 }
