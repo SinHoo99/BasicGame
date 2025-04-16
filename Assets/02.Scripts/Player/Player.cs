@@ -6,10 +6,10 @@ public class Player : MonoBehaviour
     [SerializeField] private DragIndicator indicator;
     [SerializeField] private PlayerMovement movement;
 
-    private SpriteRenderer spriteRenderer;
     private ParticleSystem playerParticleSystem;
     private BoxCollider2D boxCollider;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
@@ -28,12 +28,14 @@ public class Player : MonoBehaviour
     {
         EventBus.Subscribe<PlayerJumpEvent>(OnJump);
         EventBus.Subscribe<PlayerFallEvent>(OnFall);
+        EventBus.Subscribe<PlayerFlipEvent>(OnFlip);
     }
 
     private void OnDisable()
     {
         EventBus.Unsubscribe<PlayerJumpEvent>(OnJump);
         EventBus.Unsubscribe<PlayerFallEvent>(OnFall);
+        EventBus.Unsubscribe<PlayerFlipEvent>(OnFlip);
     }
 
     private void Start()
@@ -44,14 +46,19 @@ public class Player : MonoBehaviour
     }
     private void OnJump(PlayerJumpEvent e)
     {
-        animator.ResetTrigger("Fall");
-        animator.SetTrigger("Jump");
+        animator.SetBool("IsJumping", true);
+        animator.SetBool("IsFalling", false);
     }
 
     private void OnFall(PlayerFallEvent e)
     {
-        animator.ResetTrigger("Jump"); 
-        animator.SetTrigger("Fall");
+        animator.SetBool("IsJumping", false);
+        animator.SetBool("IsFalling", true);
+    }
+
+    private void OnFlip(PlayerFlipEvent e)
+    {
+        spriteRenderer.flipX = e.isFacingLeft;
     }
 
     private void ApplyColor(Color color)

@@ -12,7 +12,16 @@ public class GameOverEvent {  }
 public class ResumeEvent { }
 public class GameClearEvent { }*/
 
-public struct PlayerJumpEvent { }
-public struct PlayerFallEvent { }
+public class PlayerJumpEvent { }
+public class PlayerFallEvent { }
+public class PlayerFlipEvent
+{
+    public bool isFacingLeft;
+
+    public PlayerFlipEvent(bool isFacingLeft)
+    {
+        this.isFacingLeft = isFacingLeft;
+    }
+}
 
 #endregion

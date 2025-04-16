@@ -1,3 +1,4 @@
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -7,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping = false;
     private bool isFalling = false;
     private Rigidbody2D rb;
+ 
 
     private void Awake()
     {
@@ -24,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        float screenCenterX = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2f, 0f, 0f)).x;
         float vy = rb.velocity.y;
 
         if (!isJumping && vy > 0.1f)
@@ -38,6 +41,16 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
             EventBus.Publish(new PlayerFallEvent());
         }
+
+        if (rb.velocity.x < -0.05f)
+        {
+            EventBus.Publish(new PlayerFlipEvent(true));
+        }
+        else if (rb.velocity.x > 0.05f)
+        {
+            EventBus.Publish(new PlayerFlipEvent(false));
+        }
+
     }
 
 }
