@@ -2,24 +2,24 @@ using UnityEngine;
 
 public class Obstacle : PoolObject
 {
+
+    private IObstacleMover mover;
     private bool wasVisible = false;
-    private Rigidbody2D rb;
-    [SerializeField] private float speed = 1f;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+     
     }
-
     private void OnEnable()
     {
-        rb.velocity = Vector2.right * speed;
+        mover = new RigidbodyMover(); 
+        mover.Move(transform);
     }
 
     private void OnDisable()
     {
+        mover?.Stop();
         wasVisible = false;
-        rb.velocity = Vector2.zero;
     }
 
     private void OnBecameVisible()
@@ -32,4 +32,5 @@ public class Obstacle : PoolObject
         if (wasVisible)
             gameObject.SetActive(false);
     }
+
 }
