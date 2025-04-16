@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private ParticleSystem playerParticleSystem;
     private BoxCollider2D boxCollider;
+    private Animator animator;
 
     private void Awake()
     {
@@ -20,6 +21,19 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         playerParticleSystem = GetComponentInChildren<ParticleSystem>();
         boxCollider = GetComponentInChildren<BoxCollider2D>();
+        animator = GetComponentInChildren<Animator>();
+    }
+
+    private void OnEnable()
+    {
+        EventBus.Subscribe<PlayerJumpEvent>(OnJump);
+        EventBus.Subscribe<PlayerFallEvent>(OnFall);
+    }
+
+    private void OnDisable()
+    {
+        EventBus.Unsubscribe<PlayerJumpEvent>(OnJump);
+        EventBus.Unsubscribe<PlayerFallEvent>(OnFall);
     }
 
     private void Start()
@@ -28,11 +42,22 @@ public class Player : MonoBehaviour
         ColorData data = GameManager.Instance.GetColorData(selectedID);
         ApplyColor(data.GetUnityColor());
     }
+    private void OnJump(PlayerJumpEvent e)
+    {
+        animator.ResetTrigger("Fall");
+        animator.SetTrigger("Jump");
+    }
+
+    private void OnFall(PlayerFallEvent e)
+    {
+        animator.ResetTrigger("Jump"); 
+        animator.SetTrigger("Fall");
+    }
 
     private void ApplyColor(Color color)
     {
-        if (spriteRenderer != null)
-            spriteRenderer.color = color;
+/*        if (spriteRenderer != null)
+            spriteRenderer.color = color;*/
 
         if (playerParticleSystem != null)
         {
@@ -40,5 +65,4 @@ public class Player : MonoBehaviour
             main.startColor = color;
         }
     }
-
 }
