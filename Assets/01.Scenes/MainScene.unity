@@ -2279,6 +2279,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8918852783369505859, guid: 5e4b7bbdc21c7914483ccd3e32473a5b, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+    - target: {fileID: 8918852783369505859, guid: 5e4b7bbdc21c7914483ccd3e32473a5b, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8918852783369505859, guid: 5e4b7bbdc21c7914483ccd3e32473a5b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+    - target: {fileID: 8918852783369505859, guid: 5e4b7bbdc21c7914483ccd3e32473a5b, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9188235385755019506, guid: 5e4b7bbdc21c7914483ccd3e32473a5b, type: 3}
       propertyPath: m_Name
       value: StartBtn
