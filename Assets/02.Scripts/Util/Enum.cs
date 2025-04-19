@@ -10,7 +10,9 @@ public enum BGM
 }
 public enum SFX
 {
-    Click
+    Click,
+    Coin,
+    Jump
 }
 
 public enum ColorID

@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = Vector2.zero;
         rb.AddForce(drag * power, ForceMode2D.Impulse);
+        GameManager.Instance.PlaySFX(SFX.Jump);
     }
     private void FixedUpdate()
     {
