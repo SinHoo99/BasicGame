@@ -4257,7 +4257,7 @@ PrefabInstance:
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXs.Array.data[0].MyClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 85e1653d247fb434287f5e1d40601420, type: 3}
+      objectReference: {fileID: 8300000, guid: 3c8a5e20964900a41b1c72bc62ae9671, type: 3}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXs.Array.data[0].MyClip.Array.data[1]
       value: 

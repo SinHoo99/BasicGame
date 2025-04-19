@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
     {
         animator.SetBool("IsJumping", true);
         animator.SetBool("IsFalling", false);
+        GameManager.Instance.PlaySFX(SFX.Jump);
     }
 
     private void OnFall(PlayerFallEvent e)
