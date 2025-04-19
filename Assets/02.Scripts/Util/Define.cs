@@ -4,6 +4,7 @@ public struct Tag
     public const string Obstacle = "Obstacle";
     public const string Player = "Player";
     public const string Wall = "Wall";
+    public const string Coin = "Coin";
 }
 
 public struct Layer
