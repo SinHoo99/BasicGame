@@ -9,7 +9,6 @@ public class ColorData
     public int R;
     public int G;
     public int B;
-
     public Color GetUnityColor()
     {
         return new Color(R / 255f, G / 255f, B / 255f);
