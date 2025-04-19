@@ -23,8 +23,7 @@ public class Coin : PoolObject
     {
         if (collision.gameObject.CompareTag(Tag.Player))
         {
-            GameManager.Instance.NowPlayerData.Coin++;
-            Debug.Log(GameManager.Instance.NowPlayerData.Coin);
+            GameManager.Instance.AddCoin(1);
             gameObject.SetActive(false);
         }
     }

@@ -7,7 +7,6 @@ using static DataManager;
 public class GameManager : Singleton<GameManager>
 {
     public GameState CurrentState { get; private set; }
-    public int playerCurrentScore;
     private bool isQuitting;
     protected override void Awake()
     {
@@ -47,10 +46,16 @@ public class GameManager : Singleton<GameManager>
     }
     #endregion
     #region 점수 관련 로직
+    public int playerCurrentScore;
     public void AddScore(int amount)
     {
         playerCurrentScore += amount;
         EventBus.Publish(new PlayerScoreUpEvent(playerCurrentScore));
+    }
+    public void AddCoin(int amount)
+    {
+        NowPlayerData.Coin += amount;
+        EventBus.Publish(new PlayerCoinUpEvent(NowPlayerData.Coin));
     }
     public void ResetGameState()
     {

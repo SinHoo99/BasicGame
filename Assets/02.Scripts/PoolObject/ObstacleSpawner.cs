@@ -12,7 +12,7 @@ public class ObstacleSpawner : MonoBehaviour
         StartCoroutine(SpawnRoutine());
         StartCoroutine(SpawnCoinRoutine());
     }
-
+    #region 장애물 관련
     private IEnumerator SpawnRoutine()
     {
         while (true)
@@ -36,13 +36,14 @@ public class ObstacleSpawner : MonoBehaviour
         obstacle.transform.position = new Vector3(x, y, 0);
         GameManager.Instance.GetNextObstacleIndex();
     }
-
+    #endregion
+    #region 코인 관련
     private IEnumerator SpawnCoinRoutine()
     {
         while (true)
         {
             SpawnCoin(cameraTransform.position.y + 6f);
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(1f);
         }
     }
 
@@ -60,4 +61,5 @@ public class ObstacleSpawner : MonoBehaviour
         coin.transform.position = new Vector3(x, y, 0);
         GameManager.Instance.GetNextObstacleIndex();
     }
+    #endregion
 }

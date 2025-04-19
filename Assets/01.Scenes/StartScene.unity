@@ -2916,11 +2916,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6999362733728995719, guid: 12c46dfef20ad3b439391cf6f4ea4c31, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6999362733728995719, guid: 12c46dfef20ad3b439391cf6f4ea4c31, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -250
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 6999362733728995719, guid: 12c46dfef20ad3b439391cf6f4ea4c31, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5021,6 +5021,7 @@ MonoBehaviour:
   NowPlayerData:
     HighScore: 0
     NowColorID: 0
+    Coin: 0
   NowOptionData:
     BGMVolume: 0
     SFXVolume: 0
