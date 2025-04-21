@@ -63,8 +63,8 @@ public class Player : MonoBehaviour
 
     private void ApplyColor(Color color)
     {
-/*        if (spriteRenderer != null)
-            spriteRenderer.color = color;*/
+        /*        if (spriteRenderer != null)
+                    spriteRenderer.color = color;*/
 
         if (playerParticleSystem != null)
         {

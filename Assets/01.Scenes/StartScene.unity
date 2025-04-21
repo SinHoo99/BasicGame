@@ -592,11 +592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc71fd9682b835499642e3b4f136c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &527623226 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4147149890555635992, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
-  m_PrefabInstance: {fileID: 6479644782072680194}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &527623228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4706338982114530829, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
@@ -736,6 +731,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245788932}
   m_CullTransparentMesh: 1
+--- !u!82 &1287647133 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7621804424414375331, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
+  m_PrefabInstance: {fileID: 6479644782072680194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1365950553
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,6 +2074,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 3088
       objectReference: {fileID: 0}
+    - target: {fileID: 6695556878694986353, guid: 16acec44fbdb87340a06fafe5da3f17a, type: 3}
+      propertyPath: SettingPopUp
+      value: 
+      objectReference: {fileID: 2560095812555040765}
     - target: {fileID: 7818792153020054063, guid: 16acec44fbdb87340a06fafe5da3f17a, type: 3}
       propertyPath: m_Type
       value: 1
@@ -3953,7 +3957,7 @@ PrefabInstance:
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXSource
       value: 
-      objectReference: {fileID: 527623226}
+      objectReference: {fileID: 1287647133}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: AudioMixer
       value: 
@@ -3964,7 +3968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXs.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SoundEffectPitchVariance
@@ -4136,11 +4140,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXs.Array.data[1].MyClip.Array.size
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXs.Array.data[2].MyClip.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXs.Array.data[3].MyClip.Array.size
@@ -4257,11 +4261,11 @@ PrefabInstance:
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXs.Array.data[0].MyClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 85e1653d247fb434287f5e1d40601420, type: 3}
+      objectReference: {fileID: 8300000, guid: 3c8a5e20964900a41b1c72bc62ae9671, type: 3}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXs.Array.data[0].MyClip.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 06a50460fdfa0964c880e3db37f3702f, type: 3}
+      objectReference: {fileID: 8300000, guid: 85e1653d247fb434287f5e1d40601420, type: 3}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXs.Array.data[0].MyClip.Array.data[2]
       value: 
@@ -4281,7 +4285,7 @@ PrefabInstance:
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXs.Array.data[1].MyClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: ad7f75a89ec5d7645be78528f85c2fec, type: 3}
+      objectReference: {fileID: 8300000, guid: 009b556984e052e4ba98ba1e6027b86e, type: 3}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXs.Array.data[1].MyClip.Array.data[1]
       value: 
@@ -4305,7 +4309,7 @@ PrefabInstance:
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXs.Array.data[2].MyClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 1b651985958eea44ab8efdfc63ee4650, type: 3}
+      objectReference: {fileID: 8300000, guid: 5ddc160ba36de8f4abef01463aa084cf, type: 3}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXs.Array.data[2].MyClip.Array.data[1]
       value: 

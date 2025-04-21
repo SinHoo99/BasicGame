@@ -9,7 +9,7 @@ public class PlayerCollider : MonoBehaviour
         if (collision.gameObject.CompareTag(Tag.Wall) || collision.gameObject.CompareTag(Tag.Obstacle))
         {
             GameManager.Instance.SavePlayerData();
-            EventBus.Publish(new GameOverEvent());
+            EventBus.Publish(new GameOverUIEvent());
         }
     }
 }

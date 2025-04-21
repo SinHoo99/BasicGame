@@ -23,6 +23,7 @@ public class Coin : PoolObject
     {
         if (collision.gameObject.CompareTag(Tag.Player))
         {
+            GameManager.Instance.PlaySFX(SFX.Coin);
             GameManager.Instance.AddCoin(1);
             gameObject.SetActive(false);
         }
