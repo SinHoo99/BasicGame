@@ -5,6 +5,7 @@ public struct Tag
     public const string Player = "Player";
     public const string Wall = "Wall";
     public const string Coin = "Coin";
+    public const string Ghost = "Ghost";
 }
 
 public struct Layer

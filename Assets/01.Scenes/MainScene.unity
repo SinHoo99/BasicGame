@@ -2683,6 +2683,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8308168420542231335, guid: 4c3b99229af0f5f4cb2e571f7763668a, type: 3}
     - target: {fileID: 8564491359605352093, guid: f1d0508fb6b44234ea9f31bc5576b4e5, type: 3}
+      propertyPath: Ghost
+      value: 
+      objectReference: {fileID: -4318578886398968709, guid: e865f3217dd00714b88c141b7ecde80b, type: 3}
+    - target: {fileID: 8564491359605352093, guid: f1d0508fb6b44234ea9f31bc5576b4e5, type: 3}
       propertyPath: Obstacle
       value: 
       objectReference: {fileID: 4226318855032691685, guid: 77d850f0df26e6141998677f934d0648, type: 3}

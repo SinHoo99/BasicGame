@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 2783887124783807970}
   - component: {fileID: 6354316316226578012}
   - component: {fileID: 5594156352209967315}
+  - component: {fileID: 5700298952232483908}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Player
@@ -1283,7 +1284,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 0.1
-      minScalar: 1
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5100,7 +5101,7 @@ ParticleSystemRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_RenderMode: 4
+  m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -5200,3 +5201,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5700298952232483908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5915664230199568680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fb012a36bcf0ef4faee3c5066300211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GhostDelay: 0.01
+  MakeGhost: 0
+  GhostPrefab: {fileID: -4318578886398968709, guid: e865f3217dd00714b88c141b7ecde80b, type: 3}

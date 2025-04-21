@@ -76,7 +76,7 @@ public class GameManager : Singleton<GameManager>
        ? data
        : new ColorData
        {
-           ID = ColorID.Black,
+           ID = ColorID.black,
            Name = "Default",
            R = 0,
            G = 0,
