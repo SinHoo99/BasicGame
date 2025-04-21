@@ -5,7 +5,7 @@ public class Ghost : PoolObject
 {
     public float GhostDelay;
     private float _ghostDelayTime;
-    //public bool MakeGhost;
+    public bool MakeGhost;
     public PoolObject GhostPrefab;
     private SpriteRenderer _playerSpriteRenderer;
 
@@ -17,19 +17,20 @@ public class Ghost : PoolObject
 
     void Update()
     {
-/*        if (this.MakeGhost)
+        //MakeGhost = GameManager.Instance.playerCurrentScore >= 10;
+        if (this.MakeGhost)
         {
-           
-        }*/
-        if (this._ghostDelayTime > 0)
-        {
-            this._ghostDelayTime -= Time.deltaTime;
+            if (this._ghostDelayTime > 0)
+            {
+                this._ghostDelayTime -= Time.deltaTime;
+            }
+            else
+            {
+                CreateGhost();
+                this._ghostDelayTime = this.GhostDelay;
+            }
         }
-        else
-        {
-            CreateGhost();
-            this._ghostDelayTime = this.GhostDelay;
-        }
+
     }
 
     private void CreateGhost()
@@ -53,10 +54,5 @@ public class Ghost : PoolObject
         yield return new WaitForSeconds(delay);
         ghost.gameObject.SetActive(false);
     }
-
-/*    public void ToggleGhost(bool enable)
-    {
-        this.MakeGhost = enable;
-    }*/
 
 }

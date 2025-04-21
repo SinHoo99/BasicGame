@@ -10,7 +10,7 @@ public class ObstacleSpawner : MonoBehaviour
     private void Start()
     {
         StartCoroutine(SpawnRoutine());
-        //StartCoroutine(SpawnCoinRoutine());
+        StartCoroutine(SpawnCoinRoutine());
     }
     #region 장애물 관련
     private IEnumerator SpawnRoutine()
@@ -38,7 +38,7 @@ public class ObstacleSpawner : MonoBehaviour
     }
     #endregion
     #region 코인 관련
-   /* private IEnumerator SpawnCoinRoutine()
+    private IEnumerator SpawnCoinRoutine()
     {
         while (true)
         {
@@ -60,6 +60,6 @@ public class ObstacleSpawner : MonoBehaviour
         float x = Random.Range(-xRange, xRange);
         coin.transform.position = new Vector3(x, y, 0);
         GameManager.Instance.GetNextObstacleIndex();
-    }*/
+    }
     #endregion
 }
