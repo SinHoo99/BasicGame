@@ -7,7 +7,7 @@ public class ScoreUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI HighScoreText;
     [SerializeField] private TextMeshProUGUI CurrentScoreText;
     [SerializeField] private TextMeshProUGUI NowScoreText;
-    [SerializeField] private TextMeshProUGUI NowCoinText;
+   /* [SerializeField] private TextMeshProUGUI NowCoinText;*/
     private void OnEnable()
     {
         EventBus.Subscribe<PlayerScoreUpEvent>(UpdateScoreUI);
@@ -21,7 +21,7 @@ public class ScoreUI : MonoBehaviour
     private void Start()
     {
         HighScoreText.text = $"High : {GM.NowPlayerData.HighScore.ToString()}";
-        NowCoinText.text = $"{GM.NowPlayerData.Coin.ToString()}";
+        //NowCoinText.text = $"{GM.NowPlayerData.Coin.ToString()}";
         CurrentScoreText.text = "0";
     }
 

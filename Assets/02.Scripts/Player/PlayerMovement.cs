@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponentInChildren<Rigidbody2D>();
-        
     }
 
     public void OnDragEnd(Vector2 start, Vector2 end)
