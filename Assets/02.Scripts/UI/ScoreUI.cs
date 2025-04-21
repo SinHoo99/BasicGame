@@ -11,12 +11,12 @@ public class ScoreUI : MonoBehaviour
     private void OnEnable()
     {
         EventBus.Subscribe<PlayerScoreUpEvent>(UpdateScoreUI);
-        EventBus.Subscribe<PlayerCoinUpEvent>(UpdateCoinUI);
+       // EventBus.Subscribe<PlayerCoinUpEvent>(UpdateCoinUI);
     }
     private void OnDisable()
     {
         EventBus.Unsubscribe<PlayerScoreUpEvent>(UpdateScoreUI);
-        EventBus.Unsubscribe<PlayerCoinUpEvent>(UpdateCoinUI);
+       // EventBus.Unsubscribe<PlayerCoinUpEvent>(UpdateCoinUI);
     }
     private void Start()
     {
@@ -30,8 +30,8 @@ public class ScoreUI : MonoBehaviour
         CurrentScoreText.text = $"{e.CurrentScore}";
         NowScoreText.text = $"Score : {e.CurrentScore}";
     }
-    private void UpdateCoinUI(PlayerCoinUpEvent e)
+/*    private void UpdateCoinUI(PlayerCoinUpEvent e)
     {
         NowCoinText.text = $"{e.CurrentCoin}";   
-    }
+    }*/
 }

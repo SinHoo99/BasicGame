@@ -52,11 +52,11 @@ public class GameManager : Singleton<GameManager>
         playerCurrentScore += amount;
         EventBus.Publish(new PlayerScoreUpEvent(playerCurrentScore));
     }
-    public void AddCoin(int amount)
+/*    public void AddCoin(int amount)
     {
         NowPlayerData.Coin += amount;
         EventBus.Publish(new PlayerCoinUpEvent(NowPlayerData.Coin));
-    }
+    }*/
     public void ResetGameState()
     {
         playerCurrentScore = 0;
