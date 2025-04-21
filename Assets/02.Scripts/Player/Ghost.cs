@@ -5,7 +5,7 @@ public class Ghost : PoolObject
 {
     public float GhostDelay;
     private float _ghostDelayTime;
-    public bool MakeGhost;
+    //public bool MakeGhost;
     public PoolObject GhostPrefab;
     private SpriteRenderer _playerSpriteRenderer;
 
@@ -17,17 +17,18 @@ public class Ghost : PoolObject
 
     void Update()
     {
-        if (this.MakeGhost)
+/*        if (this.MakeGhost)
         {
-            if (this._ghostDelayTime > 0)
-            {
-                this._ghostDelayTime -= Time.deltaTime;
-            }
-            else
-            {
-                CreateGhost();
-                this._ghostDelayTime = this.GhostDelay;
-            }
+           
+        }*/
+        if (this._ghostDelayTime > 0)
+        {
+            this._ghostDelayTime -= Time.deltaTime;
+        }
+        else
+        {
+            CreateGhost();
+            this._ghostDelayTime = this.GhostDelay;
         }
     }
 
@@ -38,7 +39,7 @@ public class Ghost : PoolObject
         {
             currentGhost.transform.position = this.transform.position;
             currentGhost.transform.rotation = this.transform.rotation;
-            currentGhost.transform.localScale = this.transform.localScale;
+            currentGhost.transform.localScale = this.transform.localScale / 2;
             Sprite currentSprite = _playerSpriteRenderer.sprite;
             SpriteRenderer ghostSpriteRenderer = currentGhost.GetComponent<SpriteRenderer>();
             ghostSpriteRenderer.sprite = currentSprite;
@@ -53,9 +54,9 @@ public class Ghost : PoolObject
         ghost.gameObject.SetActive(false);
     }
 
-    public void ToggleGhost(bool enable)
+/*    public void ToggleGhost(bool enable)
     {
         this.MakeGhost = enable;
-    }
+    }*/
 
 }
