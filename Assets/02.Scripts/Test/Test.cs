@@ -11,17 +11,20 @@ public class Test : MonoBehaviour
         {
             SettingPopUp.SetActive(false);
         }
+        GameManager.Instance.PlaySFX(SFX.Click);
     }
 
     public void GoStartScene()
     {
         SceneLoadManager.LoadScene(0);
         SettingPopUp.SetActive(false);
+        GameManager.Instance.PlaySFX(SFX.Click);
     }
 
     public void GoStoreScene()
     {
         SceneLoadManager.LoadScene(3);
         SettingPopUp.SetActive(false);
+        GameManager.Instance.PlaySFX(SFX.Click);
     }
 }

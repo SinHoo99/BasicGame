@@ -1,4 +1,3 @@
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -13,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponentInChildren<Rigidbody2D>();
+        
     }
 
     public void OnDragEnd(Vector2 start, Vector2 end)
@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = Vector2.zero;
         rb.AddForce(drag * power, ForceMode2D.Impulse);
+        GameManager.Instance.PlaySFX(SFX.Jump);
     }
     private void FixedUpdate()
     {

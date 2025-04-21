@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class DragInputHandler : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class DragInputHandler : MonoBehaviour
 
     void Update()
     {
+        if (IsPointerOverUI()) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             dragStart = GetInputPosition();
@@ -31,6 +34,18 @@ public class DragInputHandler : MonoBehaviour
             isDragging = false;
             OnDragEnd?.Invoke(dragStart, dragEnd);
         }
+    }
+
+
+    private bool IsPointerOverUI()
+    {
+#if UNITY_EDITOR
+        return EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
+#else
+        if (Input.touchCount > 0 && EventSystem.current != null)
+            return EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId);
+        return false;
+#endif
     }
 
     private Vector2 GetInputPosition()

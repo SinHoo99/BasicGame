@@ -13,14 +13,14 @@ public class UIManager : Singleton<UIManager>
 
     private void OnEnable()
     {
-        EventBus.Subscribe<GameOverEvent>(OnGameOver);
+        EventBus.Subscribe<GameOverUIEvent>(OnGameOver);
 
     }
     private void OnDisable()
     {
-        EventBus.Unsubscribe<GameOverEvent>(OnGameOver);
+        EventBus.Unsubscribe<GameOverUIEvent>(OnGameOver);
     }
-    private void OnGameOver(GameOverEvent e)
+    private void OnGameOver(GameOverUIEvent e)
     {
         GameManager.Instance.SetGameState(GameState.GameOver);
         Show(gameOverPanel);

@@ -48,7 +48,6 @@ public class Player : MonoBehaviour
     {
         animator.SetBool("IsJumping", true);
         animator.SetBool("IsFalling", false);
-        GameManager.Instance.PlaySFX(SFX.Jump);
     }
 
     private void OnFall(PlayerFallEvent e)
@@ -64,8 +63,8 @@ public class Player : MonoBehaviour
 
     private void ApplyColor(Color color)
     {
-/*        if (spriteRenderer != null)
-            spriteRenderer.color = color;*/
+        /*        if (spriteRenderer != null)
+                    spriteRenderer.color = color;*/
 
         if (playerParticleSystem != null)
         {
