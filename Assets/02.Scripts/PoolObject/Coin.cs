@@ -1,23 +1,17 @@
+using System.Collections;
 using UnityEngine;
 
 public class Coin : PoolObject
 {
-    private bool wasVisible = false;
-
-    private void OnDisable()
+    private void OnEnable()
     {
-        wasVisible = false;
+        StartCoroutine(DisableCoin());
     }
 
-    private void OnBecameVisible()
+    private IEnumerator DisableCoin()
     {
-        wasVisible = true;
-    }
-
-    private void OnBecameInvisible()
-    {
-        if (wasVisible)
-            gameObject.SetActive(false);
+        yield return new WaitForSeconds(5f);
+        gameObject.SetActive(false);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
