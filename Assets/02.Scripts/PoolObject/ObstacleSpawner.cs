@@ -33,7 +33,7 @@ public class ObstacleSpawner : MonoBehaviour
         }
 
         float x = Random.Range(-xRange, xRange);
-        obstacle.transform.position = new Vector3(x, y, 0);
+        obstacle.transform.position = new Vector3(x, y, -1);
         GameManager.Instance.GetNextObstacleIndex();
     }
     #endregion
@@ -58,7 +58,7 @@ public class ObstacleSpawner : MonoBehaviour
         }
 
         float x = Random.Range(-xRange, xRange);
-        coin.transform.position = new Vector3(x, y, 0);
+        coin.transform.position = new Vector3(x, y, -1);
         GameManager.Instance.GetNextObstacleIndex();
     }
     #endregion
