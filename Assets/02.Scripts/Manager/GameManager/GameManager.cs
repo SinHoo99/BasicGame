@@ -47,16 +47,17 @@ public class GameManager : Singleton<GameManager>
     #endregion
     #region 점수 관련 로직
     public int playerCurrentScore;
-    public void AddScore(int amount)
+    public Vector3 playerWorldPosition;
+    public void AddScore(int amount, Vector3 worldPos)
     {
         playerCurrentScore += amount;
-        EventBus.Publish(new PlayerScoreUpEvent(playerCurrentScore));
+        EventBus.Publish(new PlayerScoreUpEvent(playerCurrentScore, worldPos));
     }
-/*    public void AddCoin(int amount)
-    {
-        NowPlayerData.Coin += amount;
-        EventBus.Publish(new PlayerCoinUpEvent(NowPlayerData.Coin));
-    }*/
+    /*    public void AddCoin(int amount)
+        {
+            NowPlayerData.Coin += amount;
+            EventBus.Publish(new PlayerCoinUpEvent(NowPlayerData.Coin));
+        }*/
     public void ResetGameState()
     {
         playerCurrentScore = 0;

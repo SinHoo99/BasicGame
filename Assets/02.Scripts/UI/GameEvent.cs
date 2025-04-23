@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class PlayerScoreUpEvent
 {
-    public int CurrentScore;
-    public GameObject ScoreUpEffect;
-    public PlayerScoreUpEvent(int score)
+    public int CurrentScore { get; }
+    public Vector3 WorldPosition { get; }
+
+    public PlayerScoreUpEvent(int score, Vector3 worldPosition)
     {
         CurrentScore = score;
+        WorldPosition = worldPosition;
     }
 }
 /*public class PlayerCoinUpEvent

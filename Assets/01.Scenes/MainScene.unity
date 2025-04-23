@@ -1502,6 +1502,8 @@ MonoBehaviour:
   HighScoreText: {fileID: 4289708287596029950}
   CurrentScoreText: {fileID: 6834168276647284184}
   NowScoreText: {fileID: 1483421911}
+  scoreEffectPrefab: {fileID: 133630353951683596, guid: 95b09e578bc371b4a9ea89aeabc4429f, type: 3}
+  canvasTransform: {fileID: 1713307347}
 --- !u!1 &1124856506
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class Coin : PoolObject
         if (collision.gameObject.CompareTag(Tag.Player))
         {
             GameManager.Instance.PlaySFX(SFX.Coin);
-            GameManager.Instance.AddScore(1);
+            GameManager.Instance.AddScore(1, transform.position);
           /*  if (scoreEffectPrefab != null)
             {
                 Instantiate(scoreEffectPrefab, transform.position, Quaternion.identity);
