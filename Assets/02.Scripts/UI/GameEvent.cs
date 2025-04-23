@@ -1,6 +1,9 @@
+using UnityEngine;
+
 public class PlayerScoreUpEvent
 {
     public int CurrentScore;
+    public GameObject ScoreUpEffect;
     public PlayerScoreUpEvent(int score)
     {
         CurrentScore = score;
@@ -32,6 +35,5 @@ public class PlayerFlipEvent
         this.isFacingLeft = isFacingLeft;
     }
 }
-
 
 #endregion

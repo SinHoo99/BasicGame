@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Coin : PoolObject
 {
-    [SerializeField] private GameObject scoreEffectPrefab;
+   // [SerializeField] private GameObject scoreEffectPrefab;
     private void OnEnable()
     {
         StartCoroutine(DisableCoin());
@@ -20,10 +20,10 @@ public class Coin : PoolObject
         {
             GameManager.Instance.PlaySFX(SFX.Coin);
             GameManager.Instance.AddScore(1);
-            if (scoreEffectPrefab != null)
+          /*  if (scoreEffectPrefab != null)
             {
                 Instantiate(scoreEffectPrefab, transform.position, Quaternion.identity);
-            }
+            }*/
             gameObject.SetActive(false);
         }
     }
