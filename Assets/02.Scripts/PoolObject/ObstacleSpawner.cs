@@ -4,62 +4,53 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField] private float spawnInterval = 2f;
-    [SerializeField] private float xRange = 2.5f;
-    [SerializeField] private Transform cameraTransform;
+    [SerializeField] private float coinInterval = 1f;
 
     private void Start()
     {
-        StartCoroutine(SpawnRoutine());
-        StartCoroutine(SpawnCoinRoutine());
+        StartCoroutine(SpawnRoutine(Tag.Obstacle, spawnInterval));
+        StartCoroutine(SpawnRoutine(Tag.Coin, coinInterval));
     }
-    #region 장애물 관련
-    private IEnumerator SpawnRoutine()
+
+    private IEnumerator SpawnRoutine(string tag, float interval)
     {
         while (true)
         {
-            SpawnObstacle(cameraTransform.position.y + 6f);
-            yield return new WaitForSeconds(spawnInterval);
+            SpawnObjectInCameraView(tag);
+            yield return new WaitForSeconds(interval);
         }
     }
 
-    private void SpawnObstacle(float y)
+    private void SpawnObjectInCameraView(string tag)
     {
-        PoolObject obstacle = ObjectPool.Instance.SpawnFromPool(Tag.Obstacle);
-
-        if (obstacle == null)
+        PoolObject obj = ObjectPool.Instance.SpawnFromPool(tag);
+        if (obj == null)
         {
-            Debug.LogWarning("풀에서 장애물을 꺼낼 수 없습니다.");
+            Debug.LogWarning($"풀에서 '{tag}' 오브젝트를 꺼낼 수 없습니다.");
             return;
         }
 
-        float x = Random.Range(-xRange, xRange);
-        obstacle.transform.position = new Vector3(x, y, -1);
-        GameManager.Instance.GetNextObstacleIndex();
-    }
-    #endregion
-    #region 코인 관련
-    private IEnumerator SpawnCoinRoutine()
-    {
-        while (true)
+        Vector3 bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
+        Vector3 topRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+
+        float x = Random.Range(bottomLeft.x, topRight.x);
+        float y;
+
+        // 장애물과 코인 모두 화면 위쪽 바깥에서 스폰
+        if (tag == Tag.Obstacle || tag == Tag.Coin)
         {
-            SpawnCoin(cameraTransform.position.y + 6f);
-            yield return new WaitForSeconds(1f);
+            y = topRight.y + 1f;
         }
-    }
-
-    private void SpawnCoin(float y)
-    {
-        PoolObject coin = ObjectPool.Instance.SpawnFromPool(Tag.Coin);
-
-        if (coin == null)
+        else
         {
-            Debug.LogWarning("풀에서 장애물을 꺼낼 수 없습니다.");
-            return;
+            y = Random.Range(bottomLeft.y, topRight.y); // 혹시 다른 태그가 생길 경우 대비
         }
 
-        float x = Random.Range(-xRange, xRange);
-        coin.transform.position = new Vector3(x, y, -1);
-        GameManager.Instance.GetNextObstacleIndex();
+        obj.transform.position = new Vector3(x, y, 0f);
+
+        if (tag == Tag.Obstacle)
+            GameManager.Instance.GetNextObstacleIndex();
     }
-    #endregion
+
+
 }

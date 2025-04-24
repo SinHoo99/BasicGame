@@ -1,17 +1,13 @@
+using System.Collections;
 using UnityEngine;
 
 public class Obstacle : PoolObject
 {
-
     private IObstacleMover mover;
-    private bool wasVisible = false;
 
-    private void Awake()
-    {
-     
-    }
     private void OnEnable()
     {
+        StartCoroutine(RetrunObject());
         mover = new RigidbodyMover(); 
         mover.Move(transform);
     }
@@ -19,18 +15,12 @@ public class Obstacle : PoolObject
     private void OnDisable()
     {
         mover?.Stop();
-        wasVisible = false;
     }
 
-    private void OnBecameVisible()
+    private IEnumerator RetrunObject()
     {
-        wasVisible = true;
-    }
-
-    private void OnBecameInvisible()
-    {
-        if (wasVisible)
-            gameObject.SetActive(false);
+        yield return new WaitForSeconds(10f);
+        gameObject.SetActive(false);
     }
 
 }
