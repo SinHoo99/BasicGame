@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ScoreUpEffect : MonoBehaviour
 {
-    [SerializeField] private float moveUpDistance = 60f;
     [SerializeField] private float duration = 1f;
 
     private RectTransform rectTransform;
@@ -17,6 +16,11 @@ public class ScoreUpEffect : MonoBehaviour
         textMesh = GetComponent<TextMeshPro>();
     }
 
+    private void OnEnable()
+    {
+        PlayEffect("+1");
+    }
+
     public void PlayEffect(string value)
     {
         if (textMesh == null || rectTransform == null) return;
@@ -25,13 +29,14 @@ public class ScoreUpEffect : MonoBehaviour
         var c = textMesh.color;
         textMesh.color = new Color(c.r, c.g, c.b, 1f); // 알파 초기화
 
-        // 이동 애니메이션
-        rectTransform.DOAnchorPosY(rectTransform.anchoredPosition.y + moveUpDistance, duration)
-                     .SetEase(Ease.OutCubic);
-
         // 페이드 아웃
         textMesh.DOFade(0f, duration).SetEase(Ease.InOutSine);
 
         Destroy(gameObject, duration);
+    }
+
+    private void OnDestroy()
+    {
+        DOTween.Kill(gameObject);
     }
 }
