@@ -31,7 +31,7 @@ public class CameraColor : MonoBehaviour
         mainCamera.backgroundColor = Color.Lerp(mainCamera.backgroundColor, targetColor, Time.deltaTime * 0.5f);
 
         // 하늘 오브젝트 위치 갱신
-        UpdateSunAndMoon();
+        //UpdateSunAndMoon();
     }
 
     Color GetColorByTime(float hour)
@@ -59,7 +59,7 @@ public class CameraColor : MonoBehaviour
         return Color.Lerp(last.color, first.color, tWrap);
     }
 
-    void UpdateSunAndMoon()
+ /*   void UpdateSunAndMoon()
     {
         float t = timeOfDay / 24f;
         Vector3 cameraTop = mainCamera.transform.position + Vector3.up * verticalOffset;
@@ -108,5 +108,5 @@ public class CameraColor : MonoBehaviour
                 moon.gameObject.SetActive(false);
             }
         }
-    }
+    }*/
 }
