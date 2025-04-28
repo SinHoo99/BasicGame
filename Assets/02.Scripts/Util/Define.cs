@@ -3,7 +3,6 @@ public struct Tag
     public const string Bullet = "Bullet";
     public const string Obstacle = "Obstacle";
     public const string Player = "Player";
-    public const string Wall = "Wall";
     public const string Coin = "Coin";
     public const string Ghost = "Ghost";
 }

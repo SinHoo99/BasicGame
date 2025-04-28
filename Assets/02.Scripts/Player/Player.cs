@@ -7,22 +7,27 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerMovement movement;
 
     private ParticleSystem playerParticleSystem;
-    private CapsuleCollider2D capsuleCollider;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-    [SerializeField] private GameObject CoinEffect;
 
     private void Awake()
     {
-        input.OnDragStart += indicator.OnDragStart;
-        input.OnDragMove += indicator.OnDragMove;
-        input.OnDragEnd += indicator.OnDragEnd;
-        input.OnDragEnd += movement.OnDragEnd;
+        if (input != null && indicator != null && movement != null)
+        {
+            input.OnDragStart += indicator.OnDragStart;
+            input.OnDragMove += indicator.OnDragMove;
+            input.OnDragEnd += indicator.OnDragEnd;
+            input.OnDragEnd += movement.OnDragEnd;
+        }
+        else
+        {
+            Debug.LogError("Player: DragInputHandler, DragIndicator, PlayerMovement 연결이 안 되어 있습니다.");
+        }
+
 
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         playerParticleSystem = GetComponentInChildren<ParticleSystem>();
-        capsuleCollider = GetComponentInChildren<CapsuleCollider2D>();
         animator = GetComponentInChildren<Animator>();
     }
 
@@ -42,9 +47,16 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        ColorID selectedID = GameManager.Instance.NowPlayerData.NowColorID;
-        ColorData data = GameManager.Instance.GetColorData(selectedID);
-        ApplyColor(data.GetUnityColor());
+        if (GameManager.Instance != null)
+        {
+            ColorID selectedID = GameManager.Instance.NowPlayerData.NowColorID;
+            ColorData data = GameManager.Instance.GetColorData(selectedID);
+            ApplyColor(data.GetUnityColor());
+        }
+        else
+        {
+            Debug.LogError("Player: GameManager.Instance가 존재하지 않습니다.");
+        }
     }
     private void OnJump(PlayerJumpEvent e)
     {
@@ -69,15 +81,6 @@ public class Player : MonoBehaviour
         {
             var main = playerParticleSystem.main;
             main.startColor = color;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Coin"))
-        {
-            Debug.Log("Coin Test");
-            CoinEffect.SetActive(true);
         }
     }
 }
