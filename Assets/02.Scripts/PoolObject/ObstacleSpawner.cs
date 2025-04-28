@@ -30,20 +30,22 @@ public class ObstacleSpawner : MonoBehaviour
             return;
         }
 
-        Vector3 bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
-        Vector3 topRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+        // 스폰 범위 설정
+        float spawnRangeX = 2.3f;
+        float centerX = transform.position.x;
+        float centerY = transform.position.y;
 
-        float x = Random.Range(bottomLeft.x, topRight.x);
+        float x = Random.Range(centerX - spawnRangeX, centerX + spawnRangeX);
         float y;
 
         // 장애물과 코인 모두 화면 위쪽 바깥에서 스폰
         if (tag == Tag.Obstacle || tag == Tag.Coin)
         {
-            y = topRight.y + 1f;
+            y = centerY + 1f; // 현재 스포너 오브젝트 위로 약간 위쪽에서 소환
         }
         else
         {
-            y = Random.Range(bottomLeft.y, topRight.y); // 혹시 다른 태그가 생길 경우 대비
+            y = centerY;
         }
 
         obj.transform.position = new Vector3(x, y, 0f);

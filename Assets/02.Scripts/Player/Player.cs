@@ -7,9 +7,11 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerMovement movement;
 
     private ParticleSystem playerParticleSystem;
-    private BoxCollider2D boxCollider;
+    private CapsuleCollider2D capsuleCollider;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+
+    [SerializeField] private GameObject CoinEffect;
 
     private void Awake()
     {
@@ -20,7 +22,7 @@ public class Player : MonoBehaviour
 
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         playerParticleSystem = GetComponentInChildren<ParticleSystem>();
-        boxCollider = GetComponentInChildren<BoxCollider2D>();
+        capsuleCollider = GetComponentInChildren<CapsuleCollider2D>();
         animator = GetComponentInChildren<Animator>();
     }
 
@@ -63,13 +65,19 @@ public class Player : MonoBehaviour
 
     private void ApplyColor(Color color)
     {
-        /*        if (spriteRenderer != null)
-                    spriteRenderer.color = color;*/
-
         if (playerParticleSystem != null)
         {
             var main = playerParticleSystem.main;
             main.startColor = color;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            Debug.Log("Coin Test");
+            CoinEffect.SetActive(true);
         }
     }
 }
