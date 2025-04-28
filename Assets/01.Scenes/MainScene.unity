@@ -1031,6 +1031,7 @@ GameObject:
   - component: {fileID: 635688288}
   - component: {fileID: 635688287}
   - component: {fileID: 635688286}
+  - component: {fileID: 635688289}
   m_Layer: 5
   m_Name: GameOverPopUp
   m_TagString: Untagged
@@ -1096,6 +1097,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &635688289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635688285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f96401ff1329c44aa1ae173f9094b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &698007330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,7 +1722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6023236224707648127, guid: b2c69cb978df4064a9ee8be2288483d3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6023236224707648127, guid: b2c69cb978df4064a9ee8be2288483d3, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1717,7 +1730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6023236224707648127, guid: b2c69cb978df4064a9ee8be2288483d3, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6023236224707648127, guid: b2c69cb978df4064a9ee8be2288483d3, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2521,7 +2534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7161916149942265172, guid: 9e1db6b5e5ca2d44eb757e48259544db, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7161916149942265172, guid: 9e1db6b5e5ca2d44eb757e48259544db, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2529,7 +2542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7161916149942265172, guid: 9e1db6b5e5ca2d44eb757e48259544db, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7161916149942265172, guid: 9e1db6b5e5ca2d44eb757e48259544db, type: 3}
       propertyPath: m_SizeDelta.x

@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class GameOverPopUp : MonoBehaviour
 {
-    void Start()
+    private void OnEnable()
     {
-        this.gameObject.SetActive(false);
-    } 
+        GameManager.Instance.PlaySFX(SFX.GameOver);
+    }
 }

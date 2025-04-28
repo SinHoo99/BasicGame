@@ -49,10 +49,5 @@ public class ObstacleSpawner : MonoBehaviour
         }
 
         obj.transform.position = new Vector3(x, y, 0f);
-
-        if (tag == Tag.Obstacle)
-            GameManager.Instance.GetNextObstacleIndex();
     }
-
-
 }
