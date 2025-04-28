@@ -6,13 +6,18 @@ public enum SoundType
 
 public enum BGM
 {
-    BGM
+    BGM,
+    StartScene,
+    MainScene,
+    StoreScene
+
 }
 public enum SFX
 {
     Click,
     Coin,
-    Jump
+    Jump,
+    GameOver
 }
 
 public enum ColorID

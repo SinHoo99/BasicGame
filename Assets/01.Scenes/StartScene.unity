@@ -3875,23 +3875,27 @@ PrefabInstance:
       objectReference: {fileID: 24100000, guid: 0fae79313e1ea9b46998f3da0f40e44d, type: 2}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: BGMs.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXs.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SoundEffectPitchVariance
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
-      propertyPath: BGMs.Array.data[1].MyEnum
+      propertyPath: BGMs.Array.data[0].MyEnum
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
-      propertyPath: BGMs.Array.data[2].MyEnum
+      propertyPath: BGMs.Array.data[1].MyEnum
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
+      propertyPath: BGMs.Array.data[2].MyEnum
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: BGMs.Array.data[3].MyEnum
@@ -4152,7 +4156,7 @@ PrefabInstance:
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: BGMs.Array.data[1].MyClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 30c5c87a80dd6b544bc6e3d50f8bfb4d, type: 3}
+      objectReference: {fileID: 8300000, guid: 441675b3dbe2dc34bb5135b0aec2455f, type: 3}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: BGMs.Array.data[1].MyClip.Array.data[1]
       value: 
@@ -4164,7 +4168,7 @@ PrefabInstance:
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: BGMs.Array.data[2].MyClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 967db6049bda31545badb0655d0d2fa9, type: 3}
+      objectReference: {fileID: 8300000, guid: f1577f4f45fd6404488adaba70f3f7d7, type: 3}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: BGMs.Array.data[3].MyClip.Array.data[0]
       value: 
@@ -4236,7 +4240,7 @@ PrefabInstance:
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXs.Array.data[3].MyClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: e96d1beccea41af49a2e5790bbf1ab16, type: 3}
+      objectReference: {fileID: 8300000, guid: 4ca379ab99d113f4084260a648b05951, type: 3}
     - target: {fileID: 2847054945502132583, guid: 5a9ca4c22f7163143b796db6fd1ce639, type: 3}
       propertyPath: SFXs.Array.data[4].MyClip.Array.data[0]
       value: 
