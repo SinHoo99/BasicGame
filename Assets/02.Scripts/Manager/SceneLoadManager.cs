@@ -47,7 +47,7 @@ public class SceneLoadManager : MonoBehaviour
             #endregion
             float progress = Mathf.Clamp01(asyncLoad.progress / 0.9f);
             ProgressBar.value = progress;
-            ProgressText.text = $"Loading...{Mathf.FloorToInt(progress * 100)}%";
+            ProgressText.text = $"로딩중...{Mathf.FloorToInt(progress * 100)}%";
 
             // 로딩이 완료되면 씬 활성화
             if (asyncLoad.progress >= 0.9f)
