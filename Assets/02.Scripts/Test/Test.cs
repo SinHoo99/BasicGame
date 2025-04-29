@@ -13,7 +13,6 @@ public class Test : MonoBehaviour
             SettingPopUp.SetActive(false);
         }
         GameManager.Instance.PlaySFX(SFX.Click);
-        GameManager.Instance.PlayBGM(BGM.MainScene);
     }
 
     public void GoStartScene()
@@ -21,7 +20,6 @@ public class Test : MonoBehaviour
         SceneLoadManager.LoadScene(0);
         SettingPopUp.SetActive(false);
         GameManager.Instance.PlaySFX(SFX.Click);
-        GameManager.Instance.PlayBGM(BGM.StartScene);
     }
 
     public void GoStoreScene()
@@ -29,7 +27,6 @@ public class Test : MonoBehaviour
         SceneLoadManager.LoadScene(3);
         SettingPopUp.SetActive(false);
         GameManager.Instance.PlaySFX(SFX.Click);
-        GameManager.Instance.PlayBGM(BGM.StoreScene);
     }
 
 }
