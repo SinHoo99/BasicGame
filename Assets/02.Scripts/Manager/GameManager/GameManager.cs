@@ -26,18 +26,12 @@ public class GameManager : Singleton<GameManager>
     {
         LoadAllData();
         ResetGameState();
-        PlayBGM(BGM.BGM);
+        PlayBGM(BGM.StartScene);
     }
-
 
 
     #region 생성 관련 로직
-    private int ObstacleSpawnIndex;
 
-    public int GetNextObstacleIndex()
-    {
-        return ObstacleSpawnIndex++;
-    }
     #endregion
     #region 상태 관련 로직
     public void SetGameState(GameState state)
@@ -47,21 +41,21 @@ public class GameManager : Singleton<GameManager>
     #endregion
     #region 점수 관련 로직
     public int playerCurrentScore;
-    public void AddScore(int amount)
+    public Vector3 playerWorldPosition;
+    public void AddScore(int amount, Vector3 worldPos)
     {
         playerCurrentScore += amount;
-        EventBus.Publish(new PlayerScoreUpEvent(playerCurrentScore));
+        EventBus.Publish(new PlayerScoreUpEvent(playerCurrentScore, worldPos));
     }
-    public void AddCoin(int amount)
-    {
-        NowPlayerData.Coin += amount;
-        EventBus.Publish(new PlayerCoinUpEvent(NowPlayerData.Coin));
-    }
+    /*    public void AddCoin(int amount)
+        {
+            NowPlayerData.Coin += amount;
+            EventBus.Publish(new PlayerCoinUpEvent(NowPlayerData.Coin));
+        }*/
     public void ResetGameState()
     {
         playerCurrentScore = 0;
         CurrentState = GameState.Playing;
-        ObstacleSpawnIndex = 0;
     }
     #endregion
     #region 데이터 (정적데이터 (EX.CSV데이터, SO) )
@@ -76,7 +70,7 @@ public class GameManager : Singleton<GameManager>
        ? data
        : new ColorData
        {
-           ID = ColorID.Black,
+           ID = ColorID.black,
            Name = "Default",
            R = 0,
            G = 0,

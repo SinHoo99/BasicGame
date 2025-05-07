@@ -16,6 +16,7 @@ public class ColorData
 }
 #endregion
 
+
 public class DataManager : MonoBehaviour
 {    
     public PlayerSO PlayerSO;

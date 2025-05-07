@@ -1,30 +1,29 @@
+using System.Collections;
 using UnityEngine;
 
 public class Coin : PoolObject
 {
-    private bool wasVisible = false;
-
-    private void OnDisable()
+   // [SerializeField] private GameObject scoreEffectPrefab;
+    private void OnEnable()
     {
-        wasVisible = false;
+        StartCoroutine(DisableCoin());
     }
 
-    private void OnBecameVisible()
+    private IEnumerator DisableCoin()
     {
-        wasVisible = true;
-    }
-
-    private void OnBecameInvisible()
-    {
-        if (wasVisible)
-            gameObject.SetActive(false);
+        yield return new WaitForSeconds(5f);
+        gameObject.SetActive(false);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(Tag.Player))
         {
             GameManager.Instance.PlaySFX(SFX.Coin);
-            GameManager.Instance.AddCoin(1);
+            GameManager.Instance.AddScore(1, transform.position);
+          /*  if (scoreEffectPrefab != null)
+            {
+                Instantiate(scoreEffectPrefab, transform.position, Quaternion.identity);
+            }*/
             gameObject.SetActive(false);
         }
     }

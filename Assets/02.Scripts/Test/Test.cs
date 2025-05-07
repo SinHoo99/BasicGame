@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Test : MonoBehaviour
 {
@@ -22,9 +23,10 @@ public class Test : MonoBehaviour
     }
 
     public void GoStoreScene()
-    {
+    {  
         SceneLoadManager.LoadScene(3);
         SettingPopUp.SetActive(false);
         GameManager.Instance.PlaySFX(SFX.Click);
     }
+
 }

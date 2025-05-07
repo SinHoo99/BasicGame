@@ -13,7 +13,6 @@ public class ObstacleCollider : MonoBehaviour
     {
         if (collision.CompareTag(Tag.Player) && !hasScored && GM.CurrentState != GameState.GameOver)
         {
-            GM.AddScore(1);
             hasScored = true;
         }
     }
