@@ -19,6 +19,9 @@ public class Player : MonoBehaviour
             input.OnDragMove += indicator.OnDragMove;
             input.OnDragEnd += indicator.OnDragEnd;
             input.OnDragEnd += movement.OnDragEnd;
+            input.OnTap += HandleTap;
+
+            movement.SetInputHandler(input);
         }
         else
         {
@@ -81,6 +84,25 @@ public class Player : MonoBehaviour
         {
             var main = playerParticleSystem.main;
             main.startColor = color;
+        }
+    }
+
+    private void HandleTap(Vector2 tapPosition)
+    {
+        // 탭 위치에 따라 공격, 회피 등 결정
+        Debug.Log($"탭 감지됨! 위치: {tapPosition}");
+
+        // 예: 오른쪽 반 → 공격, 왼쪽 반 → 회피
+        float screenCenter = Screen.width / 2f;
+        if (Input.mousePosition.x > screenCenter)
+        {
+            Debug.Log("공격!");
+            EventBus.Publish(new PlayerAttackEvent());
+        }
+        else
+        {
+            Debug.Log("회피!");
+            EventBus.Publish(new PlayerDodgeEvent());
         }
     }
 }

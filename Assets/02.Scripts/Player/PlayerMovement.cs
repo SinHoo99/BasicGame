@@ -7,15 +7,23 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping = false;
     private bool isFalling = false;
     private Rigidbody2D rb;
- 
+    private DragInputHandler inputHandler;
 
     private void Awake()
     {
         rb = GetComponentInChildren<Rigidbody2D>();
     }
 
+    public void SetInputHandler(DragInputHandler handler)
+    {
+        inputHandler = handler;
+    }
+
     public void OnDragEnd(Vector2 start, Vector2 end)
     {
+        if (inputHandler != null && inputHandler.IsShortTap)
+            return;
+
         Vector2 drag = start - end;
         if (drag.magnitude > maxLength)
             drag = drag.normalized * maxLength;
@@ -52,5 +60,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+
 
 }

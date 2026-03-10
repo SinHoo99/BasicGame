@@ -7,9 +7,17 @@ public class DragInputHandler : MonoBehaviour
     public event Action<Vector2, Vector2> OnDragStart;
     public event Action<Vector2, Vector2> OnDragMove;
     public event Action<Vector2, Vector2> OnDragEnd;
+    public event Action<Vector2> OnTap; // 탭 이벤트 추가
+
+    public bool IsShortTap { get; private set; } = false;
 
     private bool isDragging = false;
     private Vector2 dragStart;
+    private float startTime;
+
+    [Header("탭 판정 조건")]
+    [SerializeField] private float dragThreshold = 0.2f; // 최소 드래그 거리
+    [SerializeField] private float timeThreshold = 0.2f; // 최대 탭 지속 시간
 
     void Update()
     {
@@ -18,7 +26,9 @@ public class DragInputHandler : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             dragStart = GetInputPosition();
+            startTime = Time.time; // 시작 시간 기록
             isDragging = true;
+
             OnDragStart?.Invoke(dragStart, dragStart);
         }
 
@@ -32,10 +42,20 @@ public class DragInputHandler : MonoBehaviour
         {
             var dragEnd = GetInputPosition();
             isDragging = false;
+
+            float dragDistance = Vector2.Distance(dragStart, dragEnd);
+            float dragDuration = Time.time - startTime;
+
+            IsShortTap = dragDistance < dragThreshold && dragDuration < timeThreshold;
+
             OnDragEnd?.Invoke(dragStart, dragEnd);
+
+            if (IsShortTap)
+            {
+                OnTap?.Invoke(dragEnd);
+            }
         }
     }
-
 
     private bool IsPointerOverUI()
     {

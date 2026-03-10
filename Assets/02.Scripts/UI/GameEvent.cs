@@ -38,4 +38,8 @@ public class PlayerFlipEvent
     }
 }
 
+public class PlayerDodgeEvent { }
+
+public class PlayerAttackEvent { }
+
 #endregion
