@@ -47,15 +47,34 @@ public class SceneLoadManager : MonoBehaviour
             #endregion
             float progress = Mathf.Clamp01(asyncLoad.progress / 0.9f);
             ProgressBar.value = progress;
-            ProgressText.text = $"Loading...{Mathf.FloorToInt(progress * 100)}%";
+            ProgressText.text = $"로딩중...{Mathf.FloorToInt(progress * 100)}%";
 
             // 로딩이 완료되면 씬 활성화
             if (asyncLoad.progress >= 0.9f)
             {
+                PlayBgmForNextScene();
                 asyncLoad.allowSceneActivation = true;
             }
 
             yield return null;
+        }
+    }
+
+    private void PlayBgmForNextScene()
+    {
+        switch (_nextSceneNumber)
+        {
+            case 0: // StartScene
+                GameManager.Instance.PlayBGM(BGM.StartScene);
+                break;
+            case 2: // MainScene
+                GameManager.Instance.PlayBGM(BGM.MainScene);
+                break;
+            case 3: // StoreScene
+                GameManager.Instance.PlayBGM(BGM.StoreScene);
+                break;
+            default:
+                break;
         }
     }
 }

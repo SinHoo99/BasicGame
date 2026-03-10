@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CameraAutoScroller" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Camera\CameraAutoScroller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraColor" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARABABAAAAAAAABAAQAAAABAAAAEAAAAAAAEEAAAEA=</HashCode>
+      <FileName>Assets\02.Scripts\MainScene\CameraColor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerSpawner" Collapsed="true">
+    <Position X="18" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAQAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\MainScene\PlayerSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeColorData" Collapsed="true">
+    <Position X="16.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\MainScene\TimeColorData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ColorData" Collapsed="true">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAIAAAACAEAAQA=</HashCode>
+      <FileName>Assets\02.Scripts\Manager\GameManager\DataManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataManager" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQIgAAAAAAAAABAA=</HashCode>
+      <FileName>Assets\02.Scripts\Manager\GameManager\DataManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager" Collapsed="true">
+    <Position X="5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAABAACCAQIIAIIAEABCAh0AAAAAAREoBhAAAgAEE=</HashCode>
+      <FileName>Assets\02.Scripts\Manager\GameManager\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainSceneGameStarter" Collapsed="true">
+    <Position X="14.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAKAAAAAQAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Manager\GameManager\MainSceneGameStarter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerData" Collapsed="true">
+    <Position X="16.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAgBAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Manager\GameManager\SaveManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OptionData" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Manager\GameManager\SaveManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveManager" Collapsed="true">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Manager\GameManager\SaveManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AudioClipClass&lt;T&gt;" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Manager\GameManager\SoundManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundManager" Collapsed="true">
+    <Position X="11" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAABBSABEAAAAAQAAAAACAAIAAQAAABAA=</HashCode>
+      <FileName>Assets\02.Scripts\Manager\GameManager\SoundManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneLoadManager" Collapsed="true">
+    <Position X="14.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAQCAAEAAAAAAACAAAAAEABAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Manager\SceneLoadManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIManager" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAFAAAAAAAAAAEAAAMAAAAAAAACEA=</HashCode>
+      <FileName>Assets\02.Scripts\Manager\UIManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoinCollisionEffect" Collapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAACEA=</HashCode>
+      <FileName>Assets\02.Scripts\Player\CoinCollisionEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DragIndicator" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAACIAAAAAAAAQAAAAAIAAAAABAAgAAAAAAAAEA=</HashCode>
+      <FileName>Assets\02.Scripts\Player\DragIndicator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DragInputHandler" Collapsed="true">
+    <Position X="14.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAgAKIAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Player\DragInputHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ghost" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAAACACAAAAAEAECAAEAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Player\Ghost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAACAEACAAAAAAAAAAIAAAIBUIAAAAAAAQCGA=</HashCode>
+      <FileName>Assets\02.Scripts\Player\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerCollider" Collapsed="true">
+    <Position X="14.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Player\PlayerCollider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerMarker" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Player\PlayerMarker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerMovement" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAgAAAgAAAAAEAAAAAAAAAAEAABAAAAEAAAAAAEA=</HashCode>
+      <FileName>Assets\02.Scripts\Player\PlayerMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerSO" Collapsed="true">
+    <Position X="16.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Player\ScriptableObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Coin" Collapsed="true">
+    <Position X="5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAEAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\02.Scripts\PoolObject\Coin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ColorBtn" Collapsed="true">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAIAAAAAAEAAAAAAAEAAAAAAgBAAAAAFA=</HashCode>
+      <FileName>Assets\02.Scripts\PoolObject\ColorBtn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObjectPool" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAEAAAAAAAAAAAAAAgACEA=</HashCode>
+      <FileName>Assets\02.Scripts\PoolObject\ObjectPool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Obstacle" Collapsed="true">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAACAg=</HashCode>
+      <FileName>Assets\02.Scripts\PoolObject\Obstacle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObstacleSpawner" Collapsed="true">
+    <Position X="18" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAACAAAAAAAAAAAAAgAAAAAAACAAAAAAAABAA=</HashCode>
+      <FileName>Assets\02.Scripts\PoolObject\ObstacleSpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PoolManager" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACAEAAQAAAAABAAAAABAEAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\PoolObject\PoolManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PoolObject" Collapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\PoolObject\PoolObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BG" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Test\BG.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FilpRotateObject" Collapsed="true">
+    <Position X="18" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAQAAAAAAAgAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Test\FilpRotateObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ObstacleCollider" Collapsed="true">
+    <Position X="16.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAQAAAAAAEAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\02.Scripts\Test\ObstacleCollider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Planet" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEg=</HashCode>
+      <FileName>Assets\02.Scripts\Test\Planet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RotateObject" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAEAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Test\RotateObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Test" Collapsed="true">
+    <Position X="14.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAIAAAAAAAAAAAAAAAAAgAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Test\Test.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventBus" Collapsed="true">
+    <Position X="16.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAEAAAAQAAAACAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\UI\EventBus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerScoreUpEvent" Collapsed="true">
+    <Position X="14.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\UI\GameEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameOverUIEvent" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\UI\GameEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerJumpEvent" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\UI\GameEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerFallEvent" Collapsed="true">
+    <Position X="18" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\UI\GameEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerFlipEvent" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\UI\GameEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InfiniteBackGround" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAIAAAAAAAEAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\UI\InfiniteBackGround.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PickColorUI" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAiABAAAAAAAABAAAAAAAAAAIAAAgAAAACAA=</HashCode>
+      <FileName>Assets\02.Scripts\UI\PickColorUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameOverPopUp" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\02.Scripts\UI\PopupUI\GameOverPopUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SettingPopup" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAABCAAQAAAAAAAAAABgIABAAAAAADEA=</HashCode>
+      <FileName>Assets\02.Scripts\UI\PopupUI\SettingPopup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScoreUI" Collapsed="true">
+    <Position X="16.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAADAAAAAQACQAAAAAAAAAAAwIAAAAAAEACAA=</HashCode>
+      <FileName>Assets\02.Scripts\UI\ScoreUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScoreUpEffect" Collapsed="true">
+    <Position X="18" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgFAAIAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAACEA=</HashCode>
+      <FileName>Assets\02.Scripts\UI\ScoreUpEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreButton" Collapsed="true">
+    <Position X="12.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\UI\StoreButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CSVReader" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAADAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\CSVReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthSystem" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAEIAABAAAAAAAAAAAggEAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\HealthSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DOTweenMover" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAEAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Interface\IObstacleMover\DOTweenMover.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RigidbodyMover" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAACQEAAAAAAAAAAAAAAAAIABCAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Interface\IObstacleMover\RigidBodyMover.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="VerticalOscillationMover" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="18" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAEAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Interface\IObstacleMover\VerticalOscillationMover.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SFXSliderPointer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\SFXSliderPointer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Singleton&lt;T&gt;" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAIAAAAAAAAQAQAEAAAAEA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Singleton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="TimeColor" Collapsed="true">
+    <Position X="7.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\MainScene\TimeColorData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Tag" Collapsed="true">
+    <Position X="18" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAEAQAQAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Define.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Layer" Collapsed="true">
+    <Position X="9.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Define.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="SpawnObject" Collapsed="true">
+    <Position X="16.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Define.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ParameterHash" Collapsed="true">
+    <Position X="12.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Define.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ResourcesPath" Collapsed="true">
+    <Position X="14.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Define.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Data" Collapsed="true">
+    <Position X="7.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAACAEAAQA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Define.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Mixer" Collapsed="true">
+    <Position X="11" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Define.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="IObstacleMover" Collapsed="true">
+    <Position X="7.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Interface\Interface.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="SoundType" Collapsed="true">
+    <Position X="14.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Enum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BGM" Collapsed="true">
+    <Position X="7.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Enum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SFX" Collapsed="true">
+    <Position X="12.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAgAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Enum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ColorID" Collapsed="true">
+    <Position X="9.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAgAAAAAAGAAAAAIUAAAAAAAAAAAAIAAAAAAABgA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Enum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="GameState" Collapsed="true">
+    <Position X="11" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\02.Scripts\Util\Enum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

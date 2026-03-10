@@ -1,14 +1,13 @@
-using System;
-using System.Collections;
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using static DataManager;
+
 
 public class GameManager : Singleton<GameManager>
 {
+    public GameState CurrentState { get; private set; }
+    private bool isQuitting;
     protected override void Awake()
     {
         if (IsDuplicates()) return;
@@ -18,43 +17,67 @@ public class GameManager : Singleton<GameManager>
         // 실제 모바일 테스트 시 30, 60 비교해보기
         Application.targetFrameRate = 60;
 
-      //  DataManager.Initialize();
+        _dataManager.Initializer();
         SoundManager.Initializer();
+
+    }
+
+    private void Start()
+    {
+        LoadAllData();
+        ResetGameState();
+        PlayBGM(BGM.StartScene);
     }
 
 
-    #region 경고 알림
-
-    public GameObject AlertObject;
-    public TextMeshProUGUI AlertText;
-    private Coroutine _alertCoroutine;
-    public void ShowAlert(string msg)
-    {
-        AlertText.text = msg;
-        AlertObject.SetActive(true);
-       // PlaySFX(SFX.Alert);
-
-       /* if (_alertCoroutine != null) StopCoroutine(_alertCoroutine);
-        _alertCoroutine = StartCoroutine(AlertCo());*/
-    }
-   /* private IEnumerator AlertCo()
-    {
-        yield return new WaitForSecondsRealtime(2f);
-        AlertObject.SetActive(false);
-    }*/
-    
-    public void HideAlert()
-    {
-        AlertObject.SetActive(false);
-    }
+    #region 생성 관련 로직
 
     #endregion
-
-    #region 데이터
-    [SerializeField] private DataManager DataManager;
-
+    #region 상태 관련 로직
+    public void SetGameState(GameState state)
+    {
+        CurrentState = state;
+    }
     #endregion
+    #region 점수 관련 로직
+    public int playerCurrentScore;
+    public Vector3 playerWorldPosition;
+    public void AddScore(int amount, Vector3 worldPos)
+    {
+        playerCurrentScore += amount;
+        EventBus.Publish(new PlayerScoreUpEvent(playerCurrentScore, worldPos));
+    }
+    /*    public void AddCoin(int amount)
+        {
+            NowPlayerData.Coin += amount;
+            EventBus.Publish(new PlayerCoinUpEvent(NowPlayerData.Coin));
+        }*/
+    public void ResetGameState()
+    {
+        playerCurrentScore = 0;
+        CurrentState = GameState.Playing;
+    }
+    #endregion
+    #region 데이터 (정적데이터 (EX.CSV데이터, SO) )
+    [SerializeField] private DataManager _dataManager;
+    public DataManager DataManager => _dataManager;
 
+    public PlayerSO GetPlayerSOData() => _dataManager?.PlayerSO;
+
+    public ColorData GetColorData(ColorID id)
+    {
+        return _dataManager.ColorDatas.TryGetValue(id, out var data)
+       ? data
+       : new ColorData
+       {
+           ID = ColorID.black,
+           Name = "Default",
+           R = 0,
+           G = 0,
+           B = 0
+       };
+    }
+    #endregion
     #region 세이브
 
     [SerializeField] private SaveManager SaveManager;
@@ -62,11 +85,15 @@ public class GameManager : Singleton<GameManager>
     public PlayerData NowPlayerData;
     public void SavePlayerData()
     {
+        if (NowPlayerData.HighScore < playerCurrentScore)
+        {
+            NowPlayerData.HighScore = playerCurrentScore;
+        }
         SaveManager.SaveData(NowPlayerData);
     }
     public bool LoadPlayerData()
     {
-        if(SaveManager.TryLoadData(out PlayerData data))
+        if (SaveManager.TryLoadData(out PlayerData data))
         {
             NowPlayerData = data;
             return true;
@@ -74,10 +101,8 @@ public class GameManager : Singleton<GameManager>
         else
         {
             return false;
-        } 
+        }
     }
-
-
     public OptionData NowOptionData;
     public void SaveOptionData()
     {
@@ -88,6 +113,7 @@ public class GameManager : Singleton<GameManager>
         if (SaveManager.TryLoadData(out OptionData data))
         {
             NowOptionData = data;
+            SoundManager.SetVolume();
             return true;
         }
         else
@@ -100,11 +126,12 @@ public class GameManager : Singleton<GameManager>
 
     public void SaveAllData()
     {
+        SaveOptionData();
         SavePlayerData();
     }
-    public bool LoadAllData() // todo: 수정 필요
+    public bool LoadAllData()
     {
-        if(LoadPlayerData())
+        if (LoadPlayerData() && LoadOptionData())
         {
             return true;
         }
@@ -113,9 +140,7 @@ public class GameManager : Singleton<GameManager>
             return false;
         }
     }
-
     #endregion
-
     #region 사운드
 
     [SerializeField] private SoundManager SoundManager;
@@ -127,14 +152,29 @@ public class GameManager : Singleton<GameManager>
 
     public void PlayBGM(BGM target)
     {
-        //SoundManager.PlayBGM(target);
+        SoundManager.PlayBGM(target);
     }
 
     public void PlaySFX(SFX target)
     {
-        //SoundManager.PlaySFX(target);
+        SoundManager.PlaySFX(target);
     }
 
     #endregion
 
+    #region  애플리케이션 이벤트
+    private void OnApplicationQuit()
+    {
+        isQuitting = true;
+        SaveAllData();
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause && !isQuitting)
+        {
+            SaveAllData();
+        }
+    }
+    #endregion
 }

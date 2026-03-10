@@ -6,19 +6,40 @@ public enum SoundType
 
 public enum BGM
 {
-    Start
+    BGM,
+    StartScene,
+    MainScene,
+    StoreScene
+
 }
 public enum SFX
 {
-    Click
+    Click,
+    Coin,
+    Jump,
+    GameOver
 }
 
-public enum DummyDataEnum 
+public enum ColorID
 {
-    Dummy1,
-    Dummy2,
-    Dummy3,
-    Dummy4
+    black = 1,
+    white,
+    red,
+    yellow,
+    green,
+    blue,
+    fuchsia,
+    cyan,
+    orange,
+    dimgray
+
+}
+
+
+public enum GameState
+{
+    Playing,
+    GameOver
 }
 
 

@@ -1,27 +1,26 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Obstacle : PoolObject
 {
-    private bool wasVisible = false;
+    private IObstacleMover mover;
 
-    void OnBecameVisible()
+    private void OnEnable()
     {
-        wasVisible = true;
+        StartCoroutine(RetrunObject());
+        mover = new RigidbodyMover(); 
+        mover.Move(transform);
     }
 
-    void OnBecameInvisible()
+    private void OnDisable()
     {
-        if (wasVisible)
-        {
-            gameObject.SetActive(false);
-            wasVisible = false; // 다음 활성화를 위해 리셋
-        }
+        mover?.Stop();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private IEnumerator RetrunObject()
     {
-        Time.timeScale = 0;
+        yield return new WaitForSeconds(10f);
+        gameObject.SetActive(false);
     }
+
 }
